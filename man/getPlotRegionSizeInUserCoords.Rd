@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_region.R
 \name{getPlotRegionSizeInUserCoords}
 \alias{getPlotRegionSizeInUserCoords}
-\title{getPlotRegionSizeInUserCoords}
+\title{Size of Current Plot Region in User Coordinates}
 \usage{
 getPlotRegionSizeInUserCoords()
 }
@@ -11,5 +11,5 @@ list with elements \emph{width}, \emph{height}, \emph{left}, \emph{bottom},
   \emph{right}, \emph{top}
 }
 \description{
-getPlotRegionSizeInUserCoords
+Size of Current Plot Region in User Coordinates
 }

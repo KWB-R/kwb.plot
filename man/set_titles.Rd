@@ -16,5 +16,5 @@ by their \code{indices}}
 the title is given to all plots}
 }
 \description{
-Set the Ttitles in a List of ggplot Objects
+Set the Titles in a List of ggplot Objects
 }

@@ -2,10 +2,10 @@
 % Please edit documentation in R/plot_region.R
 \name{getPlotRegionSizeInInches}
 \alias{getPlotRegionSizeInInches}
-\title{getPlotRegionSizeInInches}
+\title{Size of Current Plot Region in Inches}
 \usage{
 getPlotRegionSizeInInches()
 }
 \description{
-getPlotRegionSizeInInches
+Size of Current Plot Region in Inches
 }

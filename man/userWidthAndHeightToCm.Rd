@@ -2,10 +2,15 @@
 % Please edit documentation in R/convert.R
 \name{userWidthAndHeightToCm}
 \alias{userWidthAndHeightToCm}
-\title{userWidthAndHeightToCm}
+\title{Convert Lenghts in User Coordinates to Lengths in Centimetres}
 \usage{
 userWidthAndHeightToCm(width.user, height.user)
 }
+\arguments{
+\item{width.user}{width in user coordinates}
+
+\item{height.user}{height in user coordinates}
+}
 \description{
-userWidthAndHeightToCm
+Convert Lenghts in User Coordinates to Lengths in Centimetres
 }

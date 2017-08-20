@@ -2,10 +2,13 @@
 % Please edit documentation in R/convert.R
 \name{inchesToUserWidthAndHeight}
 \alias{inchesToUserWidthAndHeight}
-\title{inchesToUserWidthAndHeight}
+\title{Convert Length in Inches to Lengths in User Coordinates}
 \usage{
 inchesToUserWidthAndHeight(inches)
 }
+\arguments{
+\item{inches}{length in inches}
+}
 \description{
-inchesToUserWidthAndHeight
+Convert Length in Inches to Lengths in User Coordinates
 }

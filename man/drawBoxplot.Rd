@@ -2,7 +2,7 @@
 % Please edit documentation in R/main.R
 \name{drawBoxplot}
 \alias{drawBoxplot}
-\title{draw boxplot icon}
+\title{Draw Boxplot Icon}
 \usage{
 drawBoxplot(centre.x, centre.y, boxwidth.cm = 1, boxheight.cm = boxwidth.cm,
   whisker.cm = boxheight.cm)
@@ -35,5 +35,4 @@ draws a symmetric boxplot icon around a centre
   ### draw a box around the centre at (4, 4) with modified whisker lengths
   drawBoxplot(4, 4, boxwidth.cm = 0.5, boxheight.cm = 1.5, whisker.cm = 0.5)
   
-
 }

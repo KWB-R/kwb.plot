@@ -2,11 +2,11 @@
 % Please edit documentation in R/main.R
 \name{addTimeAxis}
 \alias{addTimeAxis}
-\title{addTimeAxis}
+\title{Add Time Axis}
 \usage{
 addTimeAxis(myDateTime, xlim = range(myDateTime), n = 20,
   time.format = NULL, add.grid = FALSE, padj = 0.5)
 }
 \description{
-addTimeAxis
+Add Time Axis
 }

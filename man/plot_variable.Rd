@@ -2,7 +2,7 @@
 % Please edit documentation in R/highlevel.R
 \name{plot_variable}
 \alias{plot_variable}
-\title{plot_variable}
+\title{Plot a Variable of a Data Frame}
 \usage{
 plot_variable(hydraulicData, variableName = names(hydraulicData)[[2]],
   type = .defaultPlotParameter("type", variableName),
@@ -26,5 +26,5 @@ fractions of the plot region. Default: FALSE}
 top to bottom}
 }
 \description{
-plot_variable
+Plot a Variable of a Data Frame
 }

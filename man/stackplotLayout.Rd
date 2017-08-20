@@ -2,10 +2,10 @@
 % Please edit documentation in R/stackplot.R
 \name{stackplotLayout}
 \alias{stackplotLayout}
-\title{create layout for "stackplot"}
+\title{Create Layout for "stackplot"}
 \usage{
 stackplotLayout(heights.cm, margins.top.cm, margins.bottom.cm, show = FALSE)
 }
 \description{
-create layout for "stackplot"
+Create Layout for "stackplot"
 }

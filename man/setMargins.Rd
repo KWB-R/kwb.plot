@@ -2,10 +2,10 @@
 % Please edit documentation in R/main.R
 \name{setMargins}
 \alias{setMargins}
-\title{setMargins}
+\title{Set the Plot Margins}
 \usage{
 setMargins(bottom = NA, left = NA, top = NA, right = NA)
 }
 \description{
-setMargins
+Set the Plot Margins
 }

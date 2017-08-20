@@ -2,7 +2,7 @@
 % Please edit documentation in R/main.R
 \name{plot_curve_area}
 \alias{plot_curve_area}
-\title{plot filled area below a curve line}
+\title{Plot Filled Area Below a Curve Line}
 \usage{
 plot_curve_area(x, y, y.base = 0, col = NA, ...)
 }
@@ -19,7 +19,7 @@ plot_curve_area(x, y, y.base = 0, col = NA, ...)
 border of the polygon)}
 }
 \description{
-plot a filled area below a curve line
+Plot Filled Area Below a Curve Line
 }
 \examples{
   x <- seq(-pi, pi, pi/8)
@@ -32,5 +32,4 @@ plot a filled area below a curve line
   plot_curve_area(x, y, -1, col = "red")
   plot_curve_area(x, y, 1, col = "green")
   
-
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/highlevel.R
 \name{plotRain}
 \alias{plotRain}
-\title{plot rain data as bars}
+\title{Plot Rain Data as Bars}
 \usage{
 plotRain(timestamps, values, gaugeName, xlim = NULL, ylim = NULL,
   signal.width = NA, shift.to.begin = 0, col = "blue", pch = 16,
@@ -41,6 +41,5 @@ top to bottom}
 \item{las}{numeric in {0,1,2,3}; the style of axis labels. See help for par.}
 }
 \description{
-plot rain data----
-  plot rain data as bars
+Plot Rain Data as Bars
 }

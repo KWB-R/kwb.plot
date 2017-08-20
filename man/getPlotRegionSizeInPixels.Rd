@@ -2,10 +2,10 @@
 % Please edit documentation in R/plot_region.R
 \name{getPlotRegionSizeInPixels}
 \alias{getPlotRegionSizeInPixels}
-\title{getPlotRegionSizeInPixels}
+\title{Size of Current Plot Region in Pixels}
 \usage{
 getPlotRegionSizeInPixels()
 }
 \description{
-getPlotRegionSizeInPixels
+Size of Current Plot Region in Pixels
 }

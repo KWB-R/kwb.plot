@@ -2,10 +2,10 @@
 % Please edit documentation in R/main.R
 \name{alternatingPositions}
 \alias{alternatingPositions}
-\title{alternatingPositions}
+\title{Alternating Positions}
 \usage{
 alternatingPositions(n = 10, group.size = 3, alternating = TRUE)
 }
 \description{
-alternatingPositions
+Alternating Positions
 }

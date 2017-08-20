@@ -2,10 +2,13 @@
 % Please edit documentation in R/convert.R
 \name{cmToUserWidthAndHeight}
 \alias{cmToUserWidthAndHeight}
-\title{cmToUserWidthAndHeight}
+\title{Convert Length in Centimetres to Lengths in User Coordinates}
 \usage{
 cmToUserWidthAndHeight(cm)
 }
+\arguments{
+\item{cm}{length in centimetres}
+}
 \description{
-cmToUserWidthAndHeight
+Convert Length in Centimetres to Lengths in User Coordinates
 }

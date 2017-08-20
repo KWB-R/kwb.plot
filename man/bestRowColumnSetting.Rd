@@ -35,6 +35,5 @@ Number of rows and columns in an optimal plot grid for n plots
   
   # restore graphical parameter setting
   graphics::par(old.par)  
-  
 
 }

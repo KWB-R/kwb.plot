@@ -2,7 +2,7 @@
 % Please edit documentation in R/main.R
 \name{addLabels}
 \alias{addLabels}
-\title{addLabels}
+\title{Add Labels}
 \usage{
 addLabels(x, labels = as.character(x), y0 = 0, bandheight = 0.1,
   col = "black", group.size = 3, alternating = FALSE,

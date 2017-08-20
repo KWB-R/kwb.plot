@@ -2,7 +2,7 @@
 % Please edit documentation in R/stackplot.R
 \name{stackplot}
 \alias{stackplot}
-\title{plots on top of each other}
+\title{Plots on Top of Each Other}
 \usage{
 stackplot(functionCalls, heights.cm = 5, margins.top.cm = 0,
   margins.bottom.cm = 0, margins.left.cm = 3, margins.right.cm = 1,
@@ -16,5 +16,5 @@ being evaluated with eval}
 evaluated. Default: parent.frame()}
 }
 \description{
-plots on top of each other
+Plots on Top of Each Other
 }

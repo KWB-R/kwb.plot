@@ -2,7 +2,7 @@
 % Please edit documentation in R/demo.R
 \name{demo.adj}
 \alias{demo.adj}
-\title{demonstration of graphical parameter "adj"}
+\title{Demo of Graphical Parameter "adj"}
 \usage{
 demo.adj(text = "Text", srt = c(0, 90), cex = 1, ..., to.pdf = FALSE)
 }
@@ -24,5 +24,4 @@ Demonstration of the effect of the graphical parameter "adj" (horizontal and
   kwb.plot::demo.adj("Exampletext", srt = 30)
   kwb.plot::demo.adj(srt = c(0, 45, 90), to.pdf = TRUE)  
   
-
 }

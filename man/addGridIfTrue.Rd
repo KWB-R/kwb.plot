@@ -2,7 +2,7 @@
 % Please edit documentation in R/main.R
 \name{addGridIfTrue}
 \alias{addGridIfTrue}
-\title{add a grid if the first argument is TRUE}
+\title{Add a Grid if the First Argument is TRUE}
 \usage{
 addGridIfTrue(plot.grid, xPositions, yPositions = graphics::axTicks(2),
   col = "grey", lty = 3, ...)
@@ -17,5 +17,5 @@ addGridIfTrue(plot.grid, xPositions, yPositions = graphics::axTicks(2),
 \item{\dots}{additional arguments passed to abline}
 }
 \description{
-# add a grid if the first argument is TRUE
+Add a Grid if the First Argument is TRUE
 }

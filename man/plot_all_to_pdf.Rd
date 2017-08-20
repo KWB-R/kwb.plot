@@ -14,5 +14,5 @@ plot_all_to_pdf(plots, landscape = TRUE, ...)
 \item{\dots}{further arguments passed to \code{\link[kwb.utils]{preparePdf}}}
 }
 \description{
-Print all ggplot objects to a PDF file
+Print all ggplot Objects to a PDF file
 }

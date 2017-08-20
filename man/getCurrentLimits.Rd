@@ -2,7 +2,7 @@
 % Please edit documentation in R/limits.R
 \name{getCurrentLimits}
 \alias{getCurrentLimits}
-\title{getCurrentLimits}
+\title{Get Current xlim and ylim}
 \usage{
 getCurrentLimits(type = "xy", xaxs = graphics::par("xaxs"),
   yaxs = graphics::par("yaxs"))

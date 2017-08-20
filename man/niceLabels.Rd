@@ -2,7 +2,7 @@
 % Please edit documentation in R/main.R
 \name{niceLabels}
 \alias{niceLabels}
-\title{nice labels}
+\title{Nice Labels}
 \usage{
 niceLabels(label, labelstep = NULL, labelpos = NULL, mindist = 1,
   offset = 0)
@@ -45,5 +45,4 @@ Generates a nice vector of labels by suppressing labels at certain
   mybarplot(x, names.arg = niceLabels(names.arg, labelstep = 3, offset = 1))
   mybarplot(x, names.arg = niceLabels(names.arg, labelstep = 3, offset = 2))
   
-
 }

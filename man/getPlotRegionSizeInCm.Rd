@@ -2,10 +2,10 @@
 % Please edit documentation in R/plot_region.R
 \name{getPlotRegionSizeInCm}
 \alias{getPlotRegionSizeInCm}
-\title{getPlotRegionSizeInCm}
+\title{Size of Current Plot Region in Centimetres}
 \usage{
 getPlotRegionSizeInCm()
 }
 \description{
-getPlotRegionSizeInCm
+Size of Current Plot Region in Centimetres
 }

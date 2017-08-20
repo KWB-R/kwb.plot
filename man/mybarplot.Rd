@@ -83,5 +83,4 @@ barplot function allowing to set label and axis arguments, e.g. rotation of
   mybarplot(height2, las = 1, main = "mybarplot", beside = TRUE, 
             cex.names = 0.8, args.text = args_text(srt = 30))
   
-
 }

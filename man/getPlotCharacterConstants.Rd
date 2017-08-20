@@ -2,7 +2,7 @@
 % Please edit documentation in R/main.R
 \name{getPlotCharacterConstants}
 \alias{getPlotCharacterConstants}
-\title{selected, named pch constants}
+\title{List of Named Constants for Graphical Parameter pch}
 \usage{
 getPlotCharacterConstants()
 }
@@ -11,5 +11,5 @@ list of plot character constants with each element being named according
   to the appearence of the plot character, e.g. "CIRCLE", "TRIANGLE", ...
 }
 \description{
-selected, named plot character (pch) constants
+List of Named Constants for Graphical Parameter pch
 }
