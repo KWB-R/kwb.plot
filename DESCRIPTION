@@ -1,0 +1,16 @@
+Package: kwb.plot
+Maintainer: Hauke Sonnenberg <hauke.sonnenberg@kompetenz-wasser.de>
+Author: Hauke Sonnenberg
+Version: 0.2.99
+Imports: kwb.utils, ggplot2, gridExtra
+Suggests:
+    kwb.datetime,
+    testthat,
+    devtools,
+    knitr,
+    rmarkdown
+License: GPL
+Title: some useful functions for plotting
+Description: Some useful functions for plotting.
+RoxygenNote: 6.0.1
+VignetteBuilder: knitr
