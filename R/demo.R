@@ -103,6 +103,9 @@ preview_themes <- function(
 #' 
 ggplot_themes <- function()
 {
+  library("ggplot2")
+  on.exit(detach("package:ggplot2", unload = TRUE))
+  
   theme_names <- grep("^theme_", ls("package:ggplot2"), value = TRUE)
   theme_names <- setdiff(theme_names, c("theme_get", "theme_set"))
   
