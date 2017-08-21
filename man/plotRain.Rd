@@ -4,14 +4,17 @@
 \alias{plotRain}
 \title{Plot Rain Data as Bars}
 \usage{
-plotRain(timestamps, values, gaugeName, xlim = NULL, ylim = NULL,
+plotRain(timestamps, values, gaugeName = "", xlim = NULL, ylim = NULL,
   signal.width = NA, shift.to.begin = 0, col = "blue", pch = 16,
-  reverse.ylim = TRUE, las = 1, innerMargins, add.time.axis = TRUE, ...)
+  reverse.ylim = TRUE, las = 1, innerMargins = c(0, 0, 0, 0),
+  add.time.axis = TRUE, ...)
 }
 \arguments{
 \item{timestamps}{timestamps}
 
 \item{values}{precipitation values in mm}
+
+\item{gaugeName}{Name of rain gauge to appear in the y label}
 
 \item{xlim}{x limits}
 
@@ -39,6 +42,12 @@ plotting these points}
 top to bottom}
 
 \item{las}{numeric in {0,1,2,3}; the style of axis labels. See help for par.}
+
+\item{innerMargins}{passed to \code{\link{plot_variable}}}
+
+\item{add.time.axis}{passed to \code{\link{plot_variable}}}
+
+\item{\dots}{further arguments passed to \code{\link{points}}}
 }
 \description{
 Plot Rain Data as Bars

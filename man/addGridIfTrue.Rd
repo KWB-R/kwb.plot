@@ -14,7 +14,11 @@ addGridIfTrue(plot.grid, xPositions, yPositions = graphics::axTicks(2),
 
 \item{yPositions}{y positions of the horizontal grid lines}
 
-\item{\dots}{additional arguments passed to abline}
+\item{col}{colour of the grid lines, passed to \code{\link{abline}}}
+
+\item{lty}{line type of the grid lines, passed to \code{\link{abline}}}
+
+\item{\dots}{additional arguments passed to \code{\link{abline}}}
 }
 \description{
 Add a Grid if the First Argument is TRUE

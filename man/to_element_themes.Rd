@@ -6,6 +6,11 @@
 \usage{
 to_element_themes(names, element)
 }
+\arguments{
+\item{names}{name of the argument given to \code{\link[ggplot2]{theme}}}
+
+\item{element}{value of the argument given to \code{\link[ggplot2]{theme}}}
+}
 \description{
 to element themes
 }

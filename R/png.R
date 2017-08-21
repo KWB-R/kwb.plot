@@ -34,6 +34,7 @@ arrange_in_png <- function(plots, filename, ...)
 #' @param units units as passed to \code{\link[grDevices]{png}}
 #' @param res resolution as passed to \code{\link[grDevices]{png}}
 #' @param \dots further arguments passed to \code{\link[grDevices]{png}}
+#' @param dbg if \code{TRUE} a message "Plotting to <filename>..." is shown
 #' 
 output_to_png <- function(
   FUN, args, filename, size = unlist(kwb.utils::DIN.A4()), units = "cm", 

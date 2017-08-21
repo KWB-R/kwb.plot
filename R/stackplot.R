@@ -4,6 +4,11 @@
 #' 
 #' @param functionCalls list of expressions each of which is expected to create a plot when
 #'   being evaluated with eval
+#' @param heights.cm heights of plots in cm
+#' @param margins.top.cm top margins of plots in cm
+#' @param margins.bottom.cm bottom margins of plots in cm
+#' @param margins.left.cm left margins of plots in cm
+#' @param margins.right.cm right margins of plots in cm
 #' @param envir environment in which the expressions given in functionCalls are to be
 #'   evaluated. Default: parent.frame()
 #' 
@@ -48,6 +53,12 @@ stackplot <- function(
 
 #' Create Layout for "stackplot"
 #' 
+#' @param heights.cm heights of plots in cm
+#' @param margins.top.cm top margins of plots in cm
+#' @param margins.bottom.cm bottom margins of plots in cm
+#' @param show if \code{TRUE} the layout is shown in the form of a plot with
+#'   the borders between the different plot sections being indicated
+
 stackplotLayout <- function(
   heights.cm, margins.top.cm, margins.bottom.cm, show = FALSE
 )

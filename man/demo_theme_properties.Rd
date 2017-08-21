@@ -2,10 +2,15 @@
 % Please edit documentation in R/demo.R
 \name{demo_theme_properties}
 \alias{demo_theme_properties}
-\title{demo theme properties}
+\title{Plots Demonstrating Theme Properties}
 \usage{
 demo_theme_properties(x = example_plot_2(), to_pdf = TRUE)
 }
+\arguments{
+\item{x}{ggplot object on which to demonstrate the theme properties}
+
+\item{to_pdf}{if \code{TRUE} (default) the plots are written to a pdf file}
+}
 \description{
-demo theme properties
+Plots Demonstrating Theme Properties
 }

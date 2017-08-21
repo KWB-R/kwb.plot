@@ -6,6 +6,11 @@
 \usage{
 element_types(secondary = FALSE)
 }
+\arguments{
+\item{secondary}{if \code{TRUE} all parameters are returned otherwise those
+parameters related to the x axis on top, the y axis on the right or the 
+distict x an y parameters related to the "stip.text" parameter are omitted}
+}
 \description{
 element types
 }

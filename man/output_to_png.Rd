@@ -24,6 +24,8 @@ the dimensions of a DIN A4 page are used.}
 \item{res}{resolution as passed to \code{\link[grDevices]{png}}}
 
 \item{\dots}{further arguments passed to \code{\link[grDevices]{png}}}
+
+\item{dbg}{if \code{TRUE} a message "Plotting to <filename>..." is shown}
 }
 \description{
 Redirect the output of a plot function to a PNG file

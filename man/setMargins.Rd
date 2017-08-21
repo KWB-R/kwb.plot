@@ -6,6 +6,15 @@
 \usage{
 setMargins(bottom = NA, left = NA, top = NA, right = NA)
 }
+\arguments{
+\item{bottom}{bottom margin as used in \code{\link{par}}("mar")}
+
+\item{left}{left margin as used in \code{\link{par}}("mar")}
+
+\item{top}{top margin as used in \code{\link{par}}("mar")}
+
+\item{right}{right margin as used in \code{\link{par}}("mar")}
+}
 \description{
 Set the Plot Margins
 }

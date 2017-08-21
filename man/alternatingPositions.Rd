@@ -6,6 +6,15 @@
 \usage{
 alternatingPositions(n = 10, group.size = 3, alternating = TRUE)
 }
+\arguments{
+\item{n}{number of positions to be generated}
+
+\item{group.size}{number of positions to be grouped. Within each group the
+positions are modified.}
+
+\item{alternating}{if \code{TRUE} the positions are alternating between
+negative and positive}
+}
 \description{
 Alternating Positions
 }

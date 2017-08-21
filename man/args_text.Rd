@@ -6,6 +6,17 @@
 \usage{
 args_text(y.abs = NULL, y.rel = -0.01, srt = 90, adj = c(1, 0.5), ...)
 }
+\arguments{
+\item{y.abs}{absolute y positions}
+
+\item{y.rel}{relative y positions}
+
+\item{srt}{see \code{\link{text}}}
+
+\item{adj}{see \code{\link{text}}}
+
+\item{\dots}{further arguments to \code{\link{text}}}
+}
 \value{
 list of arguments that may be used as \code{args.text} in
   \code{\link{mybarplot}}

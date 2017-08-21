@@ -14,6 +14,8 @@ demo.adj(text = "Text", srt = c(0, 90), cex = 1, ..., to.pdf = FALSE)
 \item{cex}{character expansion factor}
 
 \item{\dots}{further arguments passed to \code{text}}
+
+\item{to.pdf}{if \code{TRUE} the output goes into a PDF file}
 }
 \description{
 Demonstration of the effect of the graphical parameter "adj" (horizontal and

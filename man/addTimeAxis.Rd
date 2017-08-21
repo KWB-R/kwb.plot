@@ -7,6 +7,21 @@
 addTimeAxis(myDateTime, xlim = range(myDateTime), n = 20,
   time.format = NULL, add.grid = FALSE, padj = 0.5)
 }
+\arguments{
+\item{myDateTime}{vector of POSIXct timestamps}
+
+\item{xlim}{lower and upper limits of range of timestamps to be shown}
+
+\item{n}{number of timestamps to be shown, passed to \code{\link{pretty}}}
+
+\item{time.format}{time format string such as "%H:%M:%S", see 
+\code{\link{format.POSIXct}}}
+
+\item{add.grid}{if \code{TRUE} vertical lines are added at the positions of 
+the time tickmarks}
+
+\item{padj}{passed to \code{\link{axis}}}
+}
 \description{
 Add Time Axis
 }

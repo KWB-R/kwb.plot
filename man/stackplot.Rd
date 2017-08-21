@@ -12,6 +12,16 @@ stackplot(functionCalls, heights.cm = 5, margins.top.cm = 0,
 \item{functionCalls}{list of expressions each of which is expected to create a plot when
 being evaluated with eval}
 
+\item{heights.cm}{heights of plots in cm}
+
+\item{margins.top.cm}{top margins of plots in cm}
+
+\item{margins.bottom.cm}{bottom margins of plots in cm}
+
+\item{margins.left.cm}{left margins of plots in cm}
+
+\item{margins.right.cm}{right margins of plots in cm}
+
 \item{envir}{environment in which the expressions given in functionCalls are to be
 evaluated. Default: parent.frame()}
 }

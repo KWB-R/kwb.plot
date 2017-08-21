@@ -2,10 +2,16 @@
 % Please edit documentation in R/demo.R
 \name{apply_elements_text}
 \alias{apply_elements_text}
-\title{apply elements text}
+\title{Apply themes with given text properties to a plot}
 \usage{
 apply_elements_text(x, elements)
 }
+\arguments{
+\item{x}{ggplot object}
+
+\item{elements}{objects as created by function 
+\code{\link[ggplot2]{element_text}}}
+}
 \description{
-apply elements text
+Apply themes with given text properties to a plot
 }

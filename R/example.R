@@ -15,6 +15,7 @@ example_plot <- function()
 
 #' Simple ggplot Scatter Plot
 #' 
+#' @param n number of points
 example_plot_2 <- function(n = 7)
 {
   data <- data.frame(

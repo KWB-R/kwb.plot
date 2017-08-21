@@ -106,6 +106,10 @@ appropriateLimits <- function(x, limits = NULL, default = c(0, 1))
 #' 
 #' back-calculate xlim and ylim from user coordinates of plot region
 #' 
+#' @param userCoordinates list with elements 
+#'   \code{width, height, left, bottom, right, top}, as returned by 
+#'   \code{\link{getPlotRegionSizeInUserCoords}}
+#' 
 #' @return list with elements \emph{xlim} and \emph{ylim}, each of which is a numeric
 #'   vector of length two.
 #' 

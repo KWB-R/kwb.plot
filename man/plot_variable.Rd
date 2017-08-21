@@ -19,11 +19,36 @@ the timestamps}
 
 \item{variableName}{default: name of second column}
 
-\item{absolute}{if TRUE, innerMargins are to be interpreted as absolute values instead of 
+\item{type}{plot type, passed to \code{\link{points}}}
+
+\item{col}{colour, passed to \code{\link{points}}}
+
+\item{ylab}{y label, passed to \code{\link{plot}}}
+
+\item{pch}{plot character, passed to \code{\link{points}}}
+
+\item{xlim}{x limits, passed to \code{\link{plot}}}
+
+\item{ylim}{y limits, passed to \code{\link{plot}}}
+
+\item{add}{if \code{TRUE} points are added to an existing plot}
+
+\item{plot.grid}{if \code{TRUE} a grid is drawn}
+
+\item{innerMargins}{margins (bottom, left, top, right) within the plot area}
+
+\item{absolute}{if \code{TRUE}, innerMargins are to be interpreted as absolute values instead of 
 fractions of the plot region. Default: FALSE}
 
-\item{reverse.ylim}{if TRUE (default), the y axis is reversed, i.e. the bars are heading from
+\item{reverse.ylim}{if \code{TRUE} (default), the y axis is reversed, i.e. the bars are heading from
 top to bottom}
+
+\item{add.time.axis}{if \code{TRUE} a time axis is drawn}
+
+\item{time.axis.in.margins}{if \code{TRUE} the time axis is drawn only within
+the plot area excluding the margins}
+
+\item{\dots}{additional arguments passed to \code{\link{plot}}}
 }
 \description{
 Plot a Variable of a Data Frame

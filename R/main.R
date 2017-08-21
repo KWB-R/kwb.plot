@@ -209,7 +209,9 @@ getPlotCharacterConstants <- function()
 #' @param plot.grid logical. if TRUE the grid is plotted, else not.
 #' @param xPositions x positions of the vertical grid lines
 #' @param yPositions y positions of the horizontal grid lines
-#' @param \dots additional arguments passed to abline
+#' @param col colour of the grid lines, passed to \code{\link{abline}}
+#' @param lty line type of the grid lines, passed to \code{\link{abline}}
+#' @param \dots additional arguments passed to \code{\link{abline}}
 #' 
 addGridIfTrue <- function(
   plot.grid, xPositions, yPositions = graphics::axTicks(2), col = "grey", 
@@ -228,10 +230,21 @@ addGridIfTrue <- function(
 #' add labels at given x-positions to plot (with alternating y positions
 #'   to avoid overlapping labels)
 #' 
+#' @param x x positions of the labels
+#' @param labels vector of character containing the labels
+#' @param y0 base y position of the labels
 #' @param bandheight height of band "around" (alternating == FALSE) or above (alternating ==
 #'   TRUE) y0 as a fraction of the plot region height (e.g. 0.1 for 10
 #'   percent). Default: 0.1
-#' 
+#' @param col colour of the labels
+#' @param group.size passed to \code{\link{labelPositionY}}
+#' @param alternating passed to \code{\link{labelPositionY}}
+#' @param col.line colour of the lines to the labels
+#' @param lty type of the lines to the labels (as defined in \code{\link{par}})
+#' @param lty.horiz.line type of the horizontal line (as defined in
+#'   \code{\link{par}})
+#' @param adj passed to \code{\link{text}}
+#' @param cex passed to \code{\link{text}}
 addLabels <- function(
   x, labels = as.character(x), y0 = 0, bandheight = 0.1, col = "black", 
   group.size = 3, alternating = FALSE, col.line = "black", lty = 1, 
@@ -268,6 +281,10 @@ addLabels <- function(
 #' @param bandheight height of band "around" (alternating == FALSE) or above (alternating ==
 #'   TRUE) y0 as a fraction of the plot region height (e.g. 0.1 for 10
 #'   percent). Default: 0.1
+#' @param group.size number of labels that are to be placed in on "group" in
+#'   which label positions are modified along the y axis
+#' @param alternating if \code{TRUE} (default) the label positions are 
+#'   alternating between positive and negative values
 #' 
 labelPositionY <- function(
   n, y0 = 0, bandheight = 0.1, group.size = 3, alternating = TRUE
@@ -281,6 +298,11 @@ labelPositionY <- function(
 
 #' Alternating Positions
 #' 
+#' @param n number of positions to be generated
+#' @param group.size number of positions to be grouped. Within each group the
+#'   positions are modified. 
+#' @param alternating if \code{TRUE} the positions are alternating between
+#'   negative and positive
 alternatingPositions <- function(n = 10, group.size = 3, alternating = TRUE)
 {
   x <- 1:n
@@ -304,6 +326,14 @@ alternatingPositions <- function(n = 10, group.size = 3, alternating = TRUE)
 
 #' Add Time Axis
 #' 
+#' @param myDateTime vector of POSIXct timestamps
+#' @param xlim lower and upper limits of range of timestamps to be shown
+#' @param n number of timestamps to be shown, passed to \code{\link{pretty}}
+#' @param time.format time format string such as "%H:%M:%S", see 
+#'   \code{\link{format.POSIXct}}
+#' @param add.grid if \code{TRUE} vertical lines are added at the positions of 
+#'   the time tickmarks
+#' @param padj passed to \code{\link{axis}}
 addTimeAxis <- function(
   myDateTime, xlim = range(myDateTime), n = 20, time.format = NULL, 
   add.grid = FALSE, padj = 0.5
@@ -399,6 +429,10 @@ bestRowColumnSetting <- function(n, target.ratio = 1)
 
 #' Set the Plot Margins
 #' 
+#' @param bottom bottom margin as used in \code{\link{par}}("mar")
+#' @param left left margin as used in \code{\link{par}}("mar")
+#' @param top top margin as used in \code{\link{par}}("mar")
+#' @param right right margin as used in \code{\link{par}}("mar")
 setMargins <- function(bottom = NA, left = NA, top = NA, right = NA)
 {
   values <- c(bottom, left, top, right)

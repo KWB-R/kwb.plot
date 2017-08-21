@@ -6,6 +6,16 @@
 \usage{
 stackplotLayout(heights.cm, margins.top.cm, margins.bottom.cm, show = FALSE)
 }
+\arguments{
+\item{heights.cm}{heights of plots in cm}
+
+\item{margins.top.cm}{top margins of plots in cm}
+
+\item{margins.bottom.cm}{bottom margins of plots in cm}
+
+\item{show}{if \code{TRUE} the layout is shown in the form of a plot with
+the borders between the different plot sections being indicated}
+}
 \description{
 Create Layout for "stackplot"
 }

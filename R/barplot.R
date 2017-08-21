@@ -174,6 +174,12 @@ args_mybarplot <- function(
 #' Create argument list for text
 #' 
 #' Create argument list for text
+#'
+#' @param y.abs absolute y positions
+#' @param y.rel relative y positions
+#' @param srt see \code{\link{text}}
+#' @param adj see \code{\link{text}}
+#' @param \dots further arguments to \code{\link{text}}
 #' 
 #' @return list of arguments that may be used as \code{args.text} in
 #'   \code{\link{mybarplot}}
@@ -190,6 +196,14 @@ args_text <- function(
 #' Create argument list for axis
 #' 
 #' Create argument list for axis
+#' 
+#' @param side 1: bottom, 2: left, 3: top, 4: right
+#' @param at where to put the ticks/labels
+#' @param labels vector of character labels
+#' @param unit text appended to the labels with \code{\link{paste0}}
+#' @param las numeric in {0,1,2,3}; the style of axis labels 
+#'   (see \code{\link{par}})
+#' @param \dots additional parameters passed to \code{\link{axis}}
 #' 
 #' @return list of arguments that may be used as \code{args.yasis} in
 #'   \code{\link{mybarplot}} 

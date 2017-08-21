@@ -10,9 +10,32 @@ addLabels(x, labels = as.character(x), y0 = 0, bandheight = 0.1,
   cex = 0.7)
 }
 \arguments{
+\item{x}{x positions of the labels}
+
+\item{labels}{vector of character containing the labels}
+
+\item{y0}{base y position of the labels}
+
 \item{bandheight}{height of band "around" (alternating == FALSE) or above (alternating ==
 TRUE) y0 as a fraction of the plot region height (e.g. 0.1 for 10
 percent). Default: 0.1}
+
+\item{col}{colour of the labels}
+
+\item{group.size}{passed to \code{\link{labelPositionY}}}
+
+\item{alternating}{passed to \code{\link{labelPositionY}}}
+
+\item{col.line}{colour of the lines to the labels}
+
+\item{lty}{type of the lines to the labels (as defined in \code{\link{par}})}
+
+\item{lty.horiz.line}{type of the horizontal line (as defined in
+\code{\link{par}})}
+
+\item{adj}{passed to \code{\link{text}}}
+
+\item{cex}{passed to \code{\link{text}}}
 }
 \description{
 add labels at given x-positions to plot (with alternating y positions

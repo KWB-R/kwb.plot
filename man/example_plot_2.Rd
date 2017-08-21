@@ -6,6 +6,9 @@
 \usage{
 example_plot_2(n = 7)
 }
+\arguments{
+\item{n}{number of points}
+}
 \description{
 Simple ggplot Scatter Plot
 }

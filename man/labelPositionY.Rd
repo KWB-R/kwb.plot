@@ -15,6 +15,12 @@ labelPositionY(n, y0 = 0, bandheight = 0.1, group.size = 3,
 \item{bandheight}{height of band "around" (alternating == FALSE) or above (alternating ==
 TRUE) y0 as a fraction of the plot region height (e.g. 0.1 for 10
 percent). Default: 0.1}
+
+\item{group.size}{number of labels that are to be placed in on "group" in
+which label positions are modified along the y axis}
+
+\item{alternating}{if \code{TRUE} (default) the label positions are 
+alternating between positive and negative values}
 }
 \description{
 alternating y-positions to be used for label placement

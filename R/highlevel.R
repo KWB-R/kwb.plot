@@ -4,6 +4,7 @@
 #' 
 #' @param timestamps timestamps 
 #' @param values precipitation values in mm
+#' @param gaugeName Name of rain gauge to appear in the y label
 #' @param xlim x limits
 #' @param ylim y limits
 #' @param signal.width width of time intervals represented by timestamps, in seconds. If NA 
@@ -23,11 +24,14 @@
 #' @param reverse.ylim if TRUE (default), the y axis is reversed, i.e. the bars are heading from
 #'   top to bottom
 #' @param las numeric in {0,1,2,3}; the style of axis labels. See help for par.
-#' 
+#' @param innerMargins passed to \code{\link{plot_variable}} 
+#' @param add.time.axis passed to \code{\link{plot_variable}} 
+#' @param \dots further arguments passed to \code{\link{points}} 
 plotRain <- function(
-  timestamps, values, gaugeName, xlim = NULL, ylim = NULL, signal.width = NA, 
-  shift.to.begin = 0, col = "blue", pch = 16, reverse.ylim = TRUE, las = 1,
-  innerMargins, add.time.axis = TRUE, ...
+  timestamps, values, gaugeName = "", xlim = NULL, ylim = NULL, 
+  signal.width = NA, shift.to.begin = 0, col = "blue", pch = 16, 
+  reverse.ylim = TRUE, las = 1, innerMargins = c(0, 0, 0, 0), 
+  add.time.axis = TRUE, ...
 )
 {
   n <- length(timestamps)
@@ -107,7 +111,7 @@ plotRain <- function(
     col = col)
   
   if (!is.na(pch)) {
-    graphics::points(timestamps, values, pch=pch, ...)
+    graphics::points(timestamps, values, pch = pch, ...)
   }
 }
 
@@ -118,10 +122,23 @@ plotRain <- function(
 #' @param hydraulicData data frame with at least two columns. First column is expected to contain
 #'   the timestamps
 #' @param variableName default: name of second column
-#' @param absolute if TRUE, innerMargins are to be interpreted as absolute values instead of 
+#' @param type plot type, passed to \code{\link{points}} 
+#' @param col colour, passed to \code{\link{points}} 
+#' @param ylab y label, passed to \code{\link{plot}}
+#' @param pch plot character, passed to \code{\link{points}} 
+#' @param xlim x limits, passed to \code{\link{plot}} 
+#' @param ylim y limits, passed to \code{\link{plot}} 
+#' @param add if \code{TRUE} points are added to an existing plot
+#' @param plot.grid if \code{TRUE} a grid is drawn
+#' @param innerMargins margins (bottom, left, top, right) within the plot area
+#' @param absolute if \code{TRUE}, innerMargins are to be interpreted as absolute values instead of 
 #'   fractions of the plot region. Default: FALSE
-#' @param reverse.ylim if TRUE (default), the y axis is reversed, i.e. the bars are heading from
+#' @param reverse.ylim if \code{TRUE} (default), the y axis is reversed, i.e. the bars are heading from
 #'   top to bottom  
+#' @param add.time.axis if \code{TRUE} a time axis is drawn
+#' @param time.axis.in.margins if \code{TRUE} the time axis is drawn only within
+#'   the plot area excluding the margins
+#' @param \dots additional arguments passed to \code{\link{plot}}
 #' 
 plot_variable <- function(
   hydraulicData, variableName = names(hydraulicData)[[2]],
@@ -147,7 +164,7 @@ plot_variable <- function(
   # TODO: check if we can use plotNewOrAdd...
   if (add) {
     
-    graphics::points(x, y, type=type, col=col, pch=pch)
+    graphics::points(x, y, type = type, col = col, pch = pch)
     
   } else {
     

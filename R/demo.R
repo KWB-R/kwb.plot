@@ -9,6 +9,7 @@
 #' @param srt The string rotation in degrees (see \code{par})
 #' @param cex character expansion factor
 #' @param \dots further arguments passed to \code{text}
+#' @param to.pdf if \code{TRUE} the output goes into a PDF file
 #' 
 #' @examples 
 #'   kwb.plot::demo.adj()
@@ -67,6 +68,14 @@ demo.adj <- function(
 #' 
 #' Preview the effects of ggplot2-themes on a given plot
 #' 
+#' @param x ggplot object
+#' @param themes list of ggplot-themes as returned by
+#'   \code{\link[ggplot2]{theme}}
+#' @param to_pdf if \code{TRUE} (default) the output goes to a PDF file
+#' @param landscape if \code{TRUE} (default) the output to a PDF file will be in
+#'   DIN A4 landscape format, else in DIN A4 portrait format
+#' @param \dots arguments passed to \code{\link[gridExtra]{grid.arrange}}
+#' 
 preview_themes <- function(
   x = example_plot(), themes = ggplot_themes(), to_pdf = TRUE, 
   landscape = TRUE, ...
@@ -98,8 +107,11 @@ ggplot_themes <- function()
 
 # apply_elements_text ----------------------------------------------------------
 
-#' apply elements text
+#' Apply themes with given text properties to a plot
 #' 
+#' @param x ggplot object
+#' @param elements objects as created by function 
+#' \code{\link[ggplot2]{element_text}}
 apply_elements_text <- function(x, elements)
 {
   plots <- lapply(elements, function(element) {
@@ -111,8 +123,10 @@ apply_elements_text <- function(x, elements)
 
 # demo_theme_properties --------------------------------------------------------
 
-#' demo theme properties
+#' Plots Demonstrating Theme Properties
 #' 
+#' @param x ggplot object on which to demonstrate the theme properties
+#' @param to_pdf if \code{TRUE} (default) the plots are written to a pdf file
 demo_theme_properties <- function(x = example_plot_2(), to_pdf = TRUE)
 {
   pdf_file <- file.path(tempdir(), "demo_theme_properties.pdf")
@@ -164,6 +178,9 @@ demo_themes_line <- function()
 
 #' element types
 #' 
+#' @param secondary if \code{TRUE} all parameters are returned otherwise those
+#' parameters related to the x axis on top, the y axis on the right or the 
+#' distict x an y parameters related to the "stip.text" parameter are omitted
 element_types <- function(secondary = FALSE)
 {
   list(
@@ -224,6 +241,8 @@ element_types <- function(secondary = FALSE)
 
 #' to element themes
 #' 
+#' @param names name of the argument given to \code{\link[ggplot2]{theme}}
+#' @param element value of the argument given to \code{\link[ggplot2]{theme}}
 to_element_themes <- function(names, element)
 {
   lapply(kwb.utils::toNamedList(names), function(name) {

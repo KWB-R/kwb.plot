@@ -7,6 +7,20 @@
 args_yaxis(side = 2, at = graphics::axTicks(side), labels = paste0(at,
   unit), unit = "", las = 1, ...)
 }
+\arguments{
+\item{side}{1: bottom, 2: left, 3: top, 4: right}
+
+\item{at}{where to put the ticks/labels}
+
+\item{labels}{vector of character labels}
+
+\item{unit}{text appended to the labels with \code{\link{paste0}}}
+
+\item{las}{numeric in {0,1,2,3}; the style of axis labels 
+(see \code{\link{par}})}
+
+\item{\dots}{additional parameters passed to \code{\link{axis}}}
+}
 \value{
 list of arguments that may be used as \code{args.yasis} in
   \code{\link{mybarplot}}

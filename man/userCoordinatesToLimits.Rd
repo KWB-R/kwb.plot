@@ -6,6 +6,11 @@
 \usage{
 userCoordinatesToLimits(userCoordinates)
 }
+\arguments{
+\item{userCoordinates}{list with elements 
+\code{width, height, left, bottom, right, top}, as returned by 
+\code{\link{getPlotRegionSizeInUserCoords}}}
+}
 \value{
 list with elements \emph{xlim} and \emph{ylim}, each of which is a numeric
   vector of length two.
