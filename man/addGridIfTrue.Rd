@@ -23,3 +23,4 @@ addGridIfTrue(plot.grid, xPositions, yPositions = graphics::axTicks(2),
 \description{
 Add a Grid if the First Argument is TRUE
 }
+\keyword{internal}

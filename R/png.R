@@ -10,6 +10,8 @@
 #'   automatically appended if it is omitted
 #' @param \dots arguments passed to \code{\link[gridExtra]{grid.arrange}}
 #' 
+#' @export
+#' 
 arrange_in_png <- function(plots, filename, ...)
 {
   output_to_png(
@@ -35,6 +37,8 @@ arrange_in_png <- function(plots, filename, ...)
 #' @param res resolution as passed to \code{\link[grDevices]{png}}
 #' @param \dots further arguments passed to \code{\link[grDevices]{png}}
 #' @param dbg if \code{TRUE} a message "Plotting to <filename>..." is shown
+#' 
+#' @export
 #' 
 output_to_png <- function(
   FUN, args, filename, size = unlist(kwb.utils::DIN.A4()), units = "cm", 

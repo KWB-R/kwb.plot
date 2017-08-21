@@ -14,6 +14,8 @@
 #'   ylim, respectively. \emph{type} = "xy": list with elements \emph{xlim} and
 #'   \emph{ylim} each of which is a vector of two elements.
 #' 
+#' @export
+#' 
 getCurrentLimits <- function(
   type = "xy", xaxs = graphics::par("xaxs"), yaxs = graphics::par("yaxs")
 )

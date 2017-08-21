@@ -12,6 +12,8 @@
 #' @param envir environment in which the expressions given in functionCalls are to be
 #'   evaluated. Default: parent.frame()
 #' 
+#' @export
+#' 
 stackplot <- function(
   functionCalls, heights.cm = 5, margins.top.cm = 0, margins.bottom.cm = 0,
   margins.left.cm = 3, margins.right.cm = 1, envir = parent.frame()

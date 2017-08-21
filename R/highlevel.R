@@ -27,6 +27,9 @@
 #' @param innerMargins passed to \code{\link{plot_variable}} 
 #' @param add.time.axis passed to \code{\link{plot_variable}} 
 #' @param \dots further arguments passed to \code{\link{points}} 
+#' 
+#' @export
+#' 
 plotRain <- function(
   timestamps, values, gaugeName = "", xlim = NULL, ylim = NULL, 
   signal.width = NA, shift.to.begin = 0, col = "blue", pch = 16, 
@@ -140,6 +143,7 @@ plotRain <- function(
 #'   the plot area excluding the margins
 #' @param \dots additional arguments passed to \code{\link{plot}}
 #' 
+#' @export
 plot_variable <- function(
   hydraulicData, variableName = names(hydraulicData)[[2]],
   type = .defaultPlotParameter("type", variableName), 

@@ -11,6 +11,8 @@
 #' @param \dots further arguments passed to \code{text}
 #' @param to.pdf if \code{TRUE} the output goes into a PDF file
 #' 
+#' @export
+#' 
 #' @examples 
 #'   kwb.plot::demo.adj()
 #'   kwb.plot::demo.adj("Exampletext", srt = 30)
@@ -76,6 +78,8 @@ demo.adj <- function(
 #'   DIN A4 landscape format, else in DIN A4 portrait format
 #' @param \dots arguments passed to \code{\link[gridExtra]{grid.arrange}}
 #' 
+#' @export
+#' 
 preview_themes <- function(
   x = example_plot(), themes = ggplot_themes(), to_pdf = TRUE, 
   landscape = TRUE, ...
@@ -127,6 +131,9 @@ apply_elements_text <- function(x, elements)
 #' 
 #' @param x ggplot object on which to demonstrate the theme properties
 #' @param to_pdf if \code{TRUE} (default) the plots are written to a pdf file
+#' 
+#' @export
+#' 
 demo_theme_properties <- function(x = example_plot_2(), to_pdf = TRUE)
 {
   pdf_file <- file.path(tempdir(), "demo_theme_properties.pdf")

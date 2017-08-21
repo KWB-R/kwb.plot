@@ -25,3 +25,4 @@ alternating between positive and negative values}
 \description{
 alternating y-positions to be used for label placement
 }
+\keyword{internal}

@@ -9,6 +9,8 @@
 #' @param \dots further arguments given to polygon such as \code{border} (colour of the
 #'   border of the polygon)
 #' 
+#' @export
+#' 
 #' @examples 
 #'   x <- seq(-pi, pi, pi/8)
 #'   y <- sin(x)
@@ -51,6 +53,8 @@ plot_curve_area <- function(x, y, y.base = 0, col = NA, ...)
 #'   1*labelstep}, \emph{1 + 2*labelstep}, etc. remain. Offset = 1: the labels 
 #'   at indices \emph{2}, \emph{2 + 1*labelstep}, \emph{2 + 2*labelstep}, etc.
 #'   remain.
+#'   
+#' @export
 #' 
 #' @examples 
 #'   
@@ -124,6 +128,8 @@ niceLabels <- function(
 #' @param boxheight.cm height of the box in cm. Default: \emph{boxwidth.cm}
 #' @param whisker.cm length of the whiskers in cm. Default: \emph{boxheight.cm}
 #' 
+#' @export
+#' 
 #' @examples 
 #'   
 #'   ### prepare a simple plot area
@@ -192,6 +198,8 @@ drawBoxplot <- function(
 #' @return list of plot character constants with each element being named according
 #'   to the appearence of the plot character, e.g. "CIRCLE", "TRIANGLE", ...
 #' 
+#' @keywords internal
+#' 
 getPlotCharacterConstants <- function()
 {
   list(
@@ -212,6 +220,8 @@ getPlotCharacterConstants <- function()
 #' @param col colour of the grid lines, passed to \code{\link{abline}}
 #' @param lty line type of the grid lines, passed to \code{\link{abline}}
 #' @param \dots additional arguments passed to \code{\link{abline}}
+#' 
+#' @keywords internal
 #' 
 addGridIfTrue <- function(
   plot.grid, xPositions, yPositions = graphics::axTicks(2), col = "grey", 
@@ -245,6 +255,9 @@ addGridIfTrue <- function(
 #'   \code{\link{par}})
 #' @param adj passed to \code{\link{text}}
 #' @param cex passed to \code{\link{text}}
+#' 
+#' @export
+#' 
 addLabels <- function(
   x, labels = as.character(x), y0 = 0, bandheight = 0.1, col = "black", 
   group.size = 3, alternating = FALSE, col.line = "black", lty = 1, 
@@ -285,6 +298,8 @@ addLabels <- function(
 #'   which label positions are modified along the y axis
 #' @param alternating if \code{TRUE} (default) the label positions are 
 #'   alternating between positive and negative values
+#'   
+#' @keywords internal
 #' 
 labelPositionY <- function(
   n, y0 = 0, bandheight = 0.1, group.size = 3, alternating = TRUE
@@ -303,6 +318,9 @@ labelPositionY <- function(
 #'   positions are modified. 
 #' @param alternating if \code{TRUE} the positions are alternating between
 #'   negative and positive
+#'   
+#' @keywords internal
+#' 
 alternatingPositions <- function(n = 10, group.size = 3, alternating = TRUE)
 {
   x <- 1:n
@@ -334,6 +352,9 @@ alternatingPositions <- function(n = 10, group.size = 3, alternating = TRUE)
 #' @param add.grid if \code{TRUE} vertical lines are added at the positions of 
 #'   the time tickmarks
 #' @param padj passed to \code{\link{axis}}
+#' 
+#' @export
+#' 
 addTimeAxis <- function(
   myDateTime, xlim = range(myDateTime), n = 20, time.format = NULL, 
   add.grid = FALSE, padj = 0.5
@@ -388,6 +409,8 @@ addTimeAxis <- function(
 #'   representing the number of columns for an optimal plot grid to be used for
 #'   \code{n} plots in the current plot region
 #' 
+#' @export
+#' 
 #' @examples 
 #'   # save current graphical parameter setting
 #'   old.par <- graphics::par(no.readonly = TRUE)
@@ -433,6 +456,9 @@ bestRowColumnSetting <- function(n, target.ratio = 1)
 #' @param left left margin as used in \code{\link{par}}("mar")
 #' @param top top margin as used in \code{\link{par}}("mar")
 #' @param right right margin as used in \code{\link{par}}("mar")
+#' 
+#' @export
+#' 
 setMargins <- function(bottom = NA, left = NA, top = NA, right = NA)
 {
   values <- c(bottom, left, top, right)

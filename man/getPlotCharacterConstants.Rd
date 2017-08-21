@@ -13,3 +13,4 @@ list of plot character constants with each element being named according
 \description{
 List of Named Constants for Graphical Parameter pch
 }
+\keyword{internal}

@@ -4,6 +4,8 @@
 #' 
 #' barplot function allowing to set label and axis arguments, e.g. rotation of
 #'   labels, giving a unit to the axis values
+#'   
+#' @export
 #' 
 #' @param height as in \code{\link{barplot}}
 #' @param names.arg as in \code{\link{barplot}}

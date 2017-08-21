@@ -4,6 +4,8 @@
 #' 
 #' Simple ggplot example barplot
 #' 
+#' @export
+#' 
 example_plot <- function() 
 {
   data <- data.frame(x = 1:5, y = 1:5)
@@ -16,6 +18,9 @@ example_plot <- function()
 #' Simple ggplot Scatter Plot
 #' 
 #' @param n number of points
+#' 
+#' @export
+#' 
 example_plot_2 <- function(n = 7)
 {
   data <- data.frame(

@@ -9,6 +9,8 @@
 #' @param landscape passed to \code{\link[kwb.utils]{preparePdf}}
 #' @param \dots arguments passed to \code{\link[gridExtra]{grid.arrange}}
 #' 
+#' @export
+#' 
 arrange_in_pdf <- function(plots, landscape = TRUE, ...)
 {
   pdf_file <- kwb.utils::preparePdf(landscape = landscape)
@@ -23,6 +25,8 @@ arrange_in_pdf <- function(plots, landscape = TRUE, ...)
 #' @param plots list of ggplot objects
 #' @param landscape passed to \code{\link[kwb.utils]{preparePdf}}
 #' @param \dots further arguments passed to \code{\link[kwb.utils]{preparePdf}}
+#' 
+#' @export
 #' 
 plot_all_to_pdf <- function(plots, landscape = TRUE, ...)
 {

@@ -21,6 +21,8 @@ getPlotRegionRatio <- function()
 #' @return list with elements \emph{width}, \emph{height}, \emph{left}, \emph{bottom}, 
 #'   \emph{right}, \emph{top}
 #' 
+#' @export
+#' 
 getPlotRegionSizeInUserCoords <- function() 
 {
   usr <- graphics::par()$usr
@@ -39,6 +41,8 @@ getPlotRegionSizeInUserCoords <- function()
 
 #' Size of Current Plot Region in Pixels
 #' 
+#' @export
+#' 
 getPlotRegionSizeInPixels <- function() 
 {  
   dpi <- grDevices::dev.size(units = "px") / grDevices::dev.size(units = "in")
@@ -54,6 +58,8 @@ getPlotRegionSizeInPixels <- function()
 
 #' Size of Current Plot Region in Inches
 #' 
+#' @export
+#' 
 getPlotRegionSizeInInches <- function() 
 {
   mai <- graphics::par()$mai
@@ -68,6 +74,8 @@ getPlotRegionSizeInInches <- function()
 # getPlotRegionSizeInCm --------------------------------------------------------
 
 #' Size of Current Plot Region in Centimetres
+#' 
+#' @export
 #' 
 getPlotRegionSizeInCm <- function() 
 {
