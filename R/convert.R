@@ -3,7 +3,7 @@
 #' Convert Length in Inches to Lengths in User Coordinates
 #' 
 #' @param inches length in inches
-#' 
+#'
 inchesToUserWidthAndHeight <- function(inches)
 {
   sizeInches <- getPlotRegionSizeInInches()
@@ -17,6 +17,8 @@ inchesToUserWidthAndHeight <- function(inches)
 #' Convert Length in Centimetres to Lengths in User Coordinates
 #' 
 #' @param cm length in centimetres
+#' 
+#' @export
 #' 
 cmToUserWidthAndHeight <- function(cm)
 {
