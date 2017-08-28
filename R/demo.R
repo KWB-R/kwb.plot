@@ -103,7 +103,7 @@ preview_themes <- function(
 #' 
 ggplot_themes <- function()
 {
-  library("ggplot2")
+  requireNamespace("ggplot2")
   on.exit(detach("package:ggplot2", unload = TRUE))
   
   theme_names <- grep("^theme_", ls("package:ggplot2"), value = TRUE)

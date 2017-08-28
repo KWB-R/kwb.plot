@@ -183,6 +183,8 @@ args_mybarplot <- function(
 #' @param adj see \code{\link{text}}
 #' @param \dots further arguments to \code{\link{text}}
 #' 
+#' @export
+#' 
 #' @return list of arguments that may be used as \code{args.text} in
 #'   \code{\link{mybarplot}}
 #' 
@@ -206,6 +208,8 @@ args_text <- function(
 #' @param las numeric in {0,1,2,3}; the style of axis labels 
 #'   (see \code{\link{par}})
 #' @param \dots additional parameters passed to \code{\link{axis}}
+#' 
+#' @export
 #' 
 #' @return list of arguments that may be used as \code{args.yasis} in
 #'   \code{\link{mybarplot}} 

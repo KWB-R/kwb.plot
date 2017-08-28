@@ -1,38 +1,3 @@
-# plot_curve_area --------------------------------------------------------------
-
-#' Plot Filled Area Below a Curve Line
-#' 
-#' @param x vector of x coordinates
-#' @param y vector of y coordinates
-#' @param y.base y coordinate of horizontal line that closes the area
-#' @param col colour of area to be plotted. Default: NA
-#' @param \dots further arguments given to polygon such as \code{border} (colour of the
-#'   border of the polygon)
-#' 
-#' @export
-#' 
-#' @examples 
-#'   x <- seq(-pi, pi, pi/8)
-#'   y <- sin(x)
-#'   
-#'   plot(x, y)
-#'   plot_curve_area(x, y, 0, col = "red")
-#'   
-#'   plot(x, y)
-#'   plot_curve_area(x, y, -1, col = "red")
-#'   plot_curve_area(x, y, 1, col = "green")
-#'   
-plot_curve_area <- function(x, y, y.base = 0, col = NA, ...)
-{
-  stopifnot(length(x) == length(y))
-  
-  # duplicate first and last x
-  polygon.x <- c(x[1], x, x[length(x)])
-  polygon.y <- c(y.base, y, y.base)
-  
-  graphics::polygon(polygon.x, polygon.y, col = col, ...)
-}
-
 # niceLabels -------------------------------------------------------------------
 
 #' Nice Labels 
