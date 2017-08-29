@@ -103,13 +103,14 @@ preview_themes <- function(
 #' 
 ggplot_themes <- function()
 {
-  requireNamespace("ggplot2")
-  on.exit(detach("package:ggplot2", unload = TRUE))
+  envir <- asNamespace("ggplot2")
   
-  theme_names <- grep("^theme_", ls("package:ggplot2"), value = TRUE)
-  theme_names <- setdiff(theme_names, c("theme_get", "theme_set"))
+  theme_names <- grep("^theme_", ls(envir = envir), value = TRUE)
+  theme_names <- setdiff(theme_names, c("theme_get", "theme_set", "theme_env"))
   
-  lapply(kwb.utils::toNamedList(theme_names), do.call, list())
+  lapply(kwb.utils::toNamedList(theme_names), function(function_name) {
+    do.call(get(function_name, envir = envir), list())
+  })
 }
 
 # apply_elements_text ----------------------------------------------------------
