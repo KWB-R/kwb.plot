@@ -4,7 +4,7 @@
 \alias{set_subtitles}
 \title{Set the Subtitles in a List of ggplot Objects}
 \usage{
-set_subtitles(plots, subtitle, indices = seq_along(plots))
+set_subtitles(plots, subtitle, indices = seq_along(plots), ...)
 }
 \arguments{
 \item{plots}{list of ggplot objects as returned by \code{ggplot}}
@@ -14,6 +14,9 @@ by their \code{indices}}
 
 \item{indices}{indices of the plots to which the subtitle is to be given. By default
 the subtitle is given to all plots}
+
+\item{\dots}{additional arguments to \code{\link{set_labels}}, such as
+\code{action}}
 }
 \description{
 Set the Subtitles in a List of ggplot Objects

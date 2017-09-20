@@ -4,7 +4,7 @@
 \alias{set_xlabs}
 \title{Set the x Axis Label in a List of ggplot Objects}
 \usage{
-set_xlabs(plots, xlab, indices = seq_along(plots))
+set_xlabs(plots, xlab, indices = seq_along(plots), ...)
 }
 \arguments{
 \item{plots}{list of ggplot objects as returned by \code{ggplot}}
@@ -14,6 +14,9 @@ by their \code{indices}}
 
 \item{indices}{indices of the plots to which the x axis label is to be given. By default
 the x axis label is given to all plots}
+
+\item{\dots}{additional arguments to \code{\link{set_labels}}, such as
+\code{action}}
 }
 \description{
 Set the x Axis Label in a List of ggplot Objects

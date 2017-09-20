@@ -4,7 +4,7 @@
 \alias{set_titles}
 \title{Set the Titles in a List of ggplot Objects}
 \usage{
-set_titles(plots, title, indices = seq_along(plots))
+set_titles(plots, title, indices = seq_along(plots), ...)
 }
 \arguments{
 \item{plots}{list of ggplot objects as returned by \code{ggplot}}
@@ -14,6 +14,9 @@ by their \code{indices}}
 
 \item{indices}{indices of the plots to which the title is to be given. By default
 the title is given to all plots}
+
+\item{\dots}{additional arguments to \code{\link{set_labels}}, such as
+\code{action}}
 }
 \description{
 Set the Titles in a List of ggplot Objects

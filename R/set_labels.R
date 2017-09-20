@@ -7,10 +7,12 @@
 #'   by their \code{indices}
 #' @param indices indices of the plots to which the subtitle is to be given. By default
 #'   the subtitle is given to all plots
-#' 
+#' @param \dots additional arguments to \code{\link{set_labels}}, such as
+#'   \code{action}
+#'   
 #' @export
 #' 
-set_subtitles <- function(plots, subtitle, indices = seq_along(plots))
+set_subtitles <- function(plots, subtitle, indices = seq_along(plots), ...)
 {
   set_labels(plots, subtitle = subtitle, indices)
 }
@@ -24,10 +26,12 @@ set_subtitles <- function(plots, subtitle, indices = seq_along(plots))
 #'   by their \code{indices}
 #' @param indices indices of the plots to which the title is to be given. By default
 #'   the title is given to all plots
-#' 
+#' @param \dots additional arguments to \code{\link{set_labels}}, such as
+#'   \code{action}
+#'   
 #' @export
 #' 
-set_titles <- function(plots, title, indices = seq_along(plots))
+set_titles <- function(plots, title, indices = seq_along(plots), ...)
 {
   set_labels(plots, title = title, indices)
 }
@@ -41,10 +45,12 @@ set_titles <- function(plots, title, indices = seq_along(plots))
 #'   by their \code{indices}
 #' @param indices indices of the plots to which the x axis label is to be given. By default
 #'   the x axis label is given to all plots
-#' 
+#' @param \dots additional arguments to \code{\link{set_labels}}, such as
+#'   \code{action}
+#'   
 #' @export
 #' 
-set_xlabs <- function(plots, xlab, indices = seq_along(plots))
+set_xlabs <- function(plots, xlab, indices = seq_along(plots), ...)
 {
   set_labels(plots, x = xlab, indices)
 }
