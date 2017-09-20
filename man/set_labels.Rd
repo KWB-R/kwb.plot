@@ -4,20 +4,48 @@
 \alias{set_labels}
 \title{Set the Labels in a List of ggplot Objects}
 \usage{
-set_labels(plots, ..., indices = seq_along(plots))
+set_labels(plots, ..., indices = seq_along(plots), action = c("replace",
+  "append", "prepend")[1], sep = " ")
 }
 \arguments{
 \item{plots}{list of ggplot objects as returned by \code{ggplot}}
 
-\item{\dots}{name-value pairs as given to \code{\link[ggplot2]{labs}}. Possible names
-are e.g. "x", "title", "subtitle", "caption". The values are vectors
-of character that are recycled to the length of \code{indices}. They are
-used as labels given to each plot or to the plots selected by their
-\code{indices}.}
+\item{\dots}{name-value pairs as given to \code{\link[ggplot2]{labs}}.
+Possible names are e.g. "x", "title", "subtitle", "caption". The values are
+vectors of character that are recycled to the length of \code{indices}.
+They are used as labels given to each plot or to the plots selected by
+their \code{indices}.}
 
-\item{indices}{indices of the plots to which the label is to be given. By default the
-label is given to all plots}
+\item{indices}{indices of the plots to which the label is to be given. By
+default the label is given to all plots}
+
+\item{action}{one of \code{"replace"} (replace the existing label), 
+\code{"append"} (append to the existing label), \code{"prepend"} (prepend
+to the existing label).}
+
+\item{sep}{separator to be used when \code{append} is one of 
+\code{"append", "prepend"}.}
 }
 \description{
 Set the Labels in a List of ggplot Objects
+}
+\examples{
+p <- example_plot_2()
+
+plots <- list(p, p, p, p)
+
+plots_1 <- set_labels(
+  plots, title = c("Title A", "Title B", "Title C", "Title D"),
+  subtitle = "same subtitle", x = c("x label one", "x label two")
+)
+
+plots_2 <- set_labels(
+  plots, title = c("(A)", "(B)", "(C)", "(D)"),
+  subtitle = "(always the same)", x = c("(one)", "(two)"),
+  action = "append"
+)
+
+do.call(gridExtra::grid.arrange, plots_1)
+do.call(gridExtra::grid.arrange, plots_2)
+
 }
