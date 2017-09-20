@@ -9,13 +9,13 @@ set_titles(plots, title, indices = seq_along(plots), ...)
 \arguments{
 \item{plots}{list of ggplot objects as returned by \code{ggplot}}
 
-\item{title}{title (character) to be given to each plot or to the plots selected
-by their \code{indices}}
+\item{title}{title (character) to be given to each plot or to the plots
+selected by their \code{indices}}
 
-\item{indices}{indices of the plots to which the title is to be given. By default
-the title is given to all plots}
+\item{indices}{indices of the plots to which the title is to be given. By
+default the title is given to all plots}
 
-\item{\dots}{additional arguments to \code{\link{set_labels}}, such as
+\item{\dots}{additional arguments to \code{\link{set_labels}}, such as 
 \code{action}}
 }
 \description{
