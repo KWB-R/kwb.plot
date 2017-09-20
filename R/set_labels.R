@@ -14,7 +14,7 @@
 #' 
 set_subtitles <- function(plots, subtitle, indices = seq_along(plots), ...)
 {
-  set_labels(plots, subtitle = subtitle, indices = indices)
+  set_labels(plots, subtitle = subtitle, indices = indices, ...)
 }
 
 # set_titles -------------------------------------------------------------------
@@ -33,7 +33,7 @@ set_subtitles <- function(plots, subtitle, indices = seq_along(plots), ...)
 #' 
 set_titles <- function(plots, title, indices = seq_along(plots), ...)
 {
-  set_labels(plots, title = title, indices = indices)
+  set_labels(plots, title = title, indices = indices, ...)
 }
 
 # set_xlabs --------------------------------------------------------------------
@@ -52,7 +52,7 @@ set_titles <- function(plots, title, indices = seq_along(plots), ...)
 #' 
 set_xlabs <- function(plots, xlab, indices = seq_along(plots), ...)
 {
-  set_labels(plots, x = xlab, indices = indices)
+  set_labels(plots, x = xlab, indices = indices, ...)
 }
 
 # set_labels -------------------------------------------------------------------
