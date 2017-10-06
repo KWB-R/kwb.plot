@@ -4,8 +4,8 @@
 \alias{set_labels}
 \title{Set the Labels in a List of ggplot Objects}
 \usage{
-set_labels(plots, ..., indices = seq_along(plots), action = c("replace",
-  "append", "prepend")[1], sep = " ")
+set_labels(plots, ..., indices = seq_along(plots), label_data = NULL,
+  action = c("replace", "append", "prepend")[1], sep = " ")
 }
 \arguments{
 \item{plots}{list of ggplot objects as returned by \code{ggplot}}
@@ -18,6 +18,10 @@ their \code{indices}.}
 
 \item{indices}{indices of the plots to which the label is to be given. By
 default the label is given to all plots}
+
+\item{label_data}{data frame containing the different label types in 
+different columns. If given and not \code{NULL} arguments in \dots are 
+ignored.}
 
 \item{action}{one of \code{"replace"} (replace the existing label), 
 \code{"append"} (append to the existing label), \code{"prepend"} (prepend
@@ -45,7 +49,13 @@ plots_2 <- set_labels(
   action = "append"
 )
 
+label_data <- data.frame(title = "Titles set with label_data",
+  subtitle = sprintf("Plot \%d", seq_along(plots))
+)
+plots_3 <- set_labels(plots, label_data = label_data)
+
 do.call(gridExtra::grid.arrange, plots_1)
 do.call(gridExtra::grid.arrange, plots_2)
+do.call(gridExtra::grid.arrange, plots_3)
 
 }

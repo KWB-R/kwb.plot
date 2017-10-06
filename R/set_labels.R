@@ -67,6 +67,9 @@ set_xlabs <- function(plots, xlab, indices = seq_along(plots), ...)
 #'   their \code{indices}.
 #' @param indices indices of the plots to which the label is to be given. By
 #'   default the label is given to all plots
+#' @param label_data data frame containing the different label types in 
+#'   different columns. If given and not \code{NULL} arguments in \dots are 
+#'   ignored.
 #' @param action one of \code{"replace"} (replace the existing label), 
 #'   \code{"append"} (append to the existing label), \code{"prepend"} (prepend
 #'   to the existing label).
@@ -90,14 +93,27 @@ set_xlabs <- function(plots, xlab, indices = seq_along(plots), ...)
 #'   action = "append"
 #' )
 #' 
+#' label_data <- data.frame(title = "Titles set with label_data",
+#'   subtitle = sprintf("Plot %d", seq_along(plots))
+#' )
+#' plots_3 <- set_labels(plots, label_data = label_data)
+#' 
 #' do.call(gridExtra::grid.arrange, plots_1)
 #' do.call(gridExtra::grid.arrange, plots_2)
+#' do.call(gridExtra::grid.arrange, plots_3)
 #' 
 set_labels <- function(
-  plots, ..., indices = seq_along(plots), 
+  plots, ..., indices = seq_along(plots), label_data = NULL,
   action = c("replace", "append", "prepend")[1], sep = " "
 )
 {
+  if (! is.null(label_data)) {
+    
+    stopifnot(is.list(label_data))
+    
+    return (do.call(set_labels, c(label_data, list(plots = plots))))
+  }
+  
   expected <- c("replace", "append", "prepend")
   
   if (! action %in% expected) {
