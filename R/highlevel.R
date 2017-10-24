@@ -144,6 +144,7 @@ plotRain <- function(
 #' @param \dots additional arguments passed to \code{\link{plot}}
 #' 
 #' @export
+#' 
 plot_variable <- function(
   hydraulicData, variableName = names(hydraulicData)[[2]],
   type = .defaultPlotParameter("type", variableName), 
@@ -242,6 +243,8 @@ plot_variable <- function(
 #' Default Plot Parameters for Hydraulic Variables
 #' 
 #' @param parameterName one of c("type", "col", "ylab", "pch")
+#' 
+#' @export
 #' 
 .defaultPlotParameter <- function(parameterName, variableName)
 {

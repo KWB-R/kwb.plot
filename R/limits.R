@@ -60,6 +60,8 @@ getCurrentLimits <- function(
 #'   is TRUE if the element is within the limits or FALSE if the element is
 #'   out of the limits.
 #' 
+#' @export
+#' 
 inLimits <- function(x, limits)
 {
   kwb.utils::inRange(x, limits[1], limits[2])
@@ -116,6 +118,8 @@ appropriateLimits <- function(x, limits = NULL, default = c(0, 1))
 #' 
 #' @return list with elements \emph{xlim} and \emph{ylim}, each of which is a numeric
 #'   vector of length two.
+#' 
+#' @export
 #' 
 userCoordinatesToLimits <- function(userCoordinates) 
 {
