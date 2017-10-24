@@ -2,6 +2,7 @@
 
 export(addLabels)
 export(addTimeAxis)
+export(appropriateLimits)
 export(args_text)
 export(args_yaxis)
 export(arrange_in_pdf)

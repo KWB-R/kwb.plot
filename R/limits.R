@@ -80,6 +80,8 @@ inLimits <- function(x, limits)
 #'   minimum of \emph{x} (or with \emph{default[1]} if the minimum is NA). If
 #'   the second element of \emph{limits} is NA it is replaced with the maximum
 #'   of \emph{x} (or with \emph{default[2]} if the maximum is NA).
+#'   
+#' @export
 #' 
 appropriateLimits <- function(x, limits = NULL, default = c(0, 1))
 {
