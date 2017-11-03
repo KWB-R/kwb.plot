@@ -40,9 +40,10 @@ plot_curve_areas_gg <- function
   stopifnot(is.null(col) || length(y_list) == length(col))
   
   data_frames <- lapply(y_list, function(y) data.frame(x = x, y = y))
-  data <- kwb.utils::rbindAll(data_frames, nameColumn = "index")
   
-  data$index <- factor(data$index)
+  data <- kwb.utils::rbindAll(data_frames, "index", namesAsFactor = FALSE)
+  
+  data$index <- kwb.utils::toFactor(data$index)
   
   position <- if (stack) "stack" else ggplot2::position_dodge(width = 0)
   
