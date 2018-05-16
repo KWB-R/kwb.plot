@@ -9,6 +9,7 @@ Suggests:
     devtools,
     knitr,
     rmarkdown
+Remotes: github::kwb-r/kwb.utils
 License: GPL
 Title: some useful functions for plotting
 Description: Some useful functions for plotting.
