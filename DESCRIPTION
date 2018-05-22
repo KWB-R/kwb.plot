@@ -11,7 +11,7 @@ Suggests:
     rmarkdown
 Remotes: github::kwb-r/kwb.utils, 
   github::kwb-r/kwb.datetime
-License: GPL
+License: MIT + file LICENSE
 Title: some useful functions for plotting
 Description: Some useful functions for plotting.
 RoxygenNote: 6.0.1
