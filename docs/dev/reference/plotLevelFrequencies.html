@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>best nrow/ncol setting for n plots — bestRowColumnSetting • kwb.plot</title>
+<title>Plot Frequencies of Level Combinations — plotLevelFrequencies • kwb.plot</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -28,9 +28,14 @@
 
 
 
-<meta property="og:title" content="best nrow/ncol setting for n plots — bestRowColumnSetting" />
+<meta property="og:title" content="Plot Frequencies of Level Combinations — plotLevelFrequencies" />
 
-<meta property="og:description" content="Number of rows and columns in an optimal plot grid for n plots" />
+<meta property="og:description" content="For combinations of columns c1 and c2 in data,
+ggplot-objects are generated each of which shows the number (relative =
+FALSE) or percentage (relative = TRUE) of the different possible
+combinations of values in c1, and c2. The combinations of
+column names are created from the permutation of column names given in
+vars_1 and vars_2, respectively." />
 <meta name="twitter:card" content="summary" />
 
 <meta name="robots" content="noindex">
@@ -96,54 +101,64 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>best nrow/ncol setting for n plots</h1>
-    <small class="dont-index">Source: <a href='https://github.com/kwb-r/kwb.plot/blob/master/R/main.R'><code>R/main.R</code></a></small>
-    <div class="hidden name"><code>bestRowColumnSetting.Rd</code></div>
+    <h1>Plot Frequencies of Level Combinations</h1>
+    <small class="dont-index">Source: <a href='https://github.com/kwb-r/kwb.plot/blob/master/R/plot_level_frequencies.R'><code>R/plot_level_frequencies.R</code></a></small>
+    <div class="hidden name"><code>plotLevelFrequencies.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Number of rows and columns in an optimal plot grid for n plots</p>
+    <p>For combinations of columns <code>c1</code> and <code>c2</code> in <code>data</code>,
+ggplot-objects are generated each of which shows the number (<code>relative =
+FALSE</code>) or percentage (<code>relative = TRUE</code>) of the different possible
+combinations of values in <code>c1</code>, and <code>c2</code>. The combinations of
+column names are created from the permutation of column names given in
+<code>vars_1</code> and <code>vars_2</code>, respectively.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>bestRowColumnSetting</span>(<span class='no'>n</span>, <span class='kw'>target.ratio</span> <span class='kw'>=</span> <span class='fl'>1</span>)</pre>
+    <pre class="usage"><span class='fu'>plotLevelFrequencies</span>(<span class='no'>data</span>, <span class='kw'>vars_1</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>vars_2</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>relative</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>n</th>
-      <td><p>number of plots to be placed in a matrix of equally sized plot cells</p></td>
+      <th>data</th>
+      <td><p>data frame</p></td>
     </tr>
     <tr>
-      <th>target.ratio</th>
-      <td><p>desired height/width ratio within each plot (ignoring margins). Default: 1</p></td>
+      <th>vars_1</th>
+      <td><p>first vector of column names</p></td>
+    </tr>
+    <tr>
+      <th>vars_2</th>
+      <td><p>second vector of column names</p></td>
+    </tr>
+    <tr>
+      <th>relative</th>
+      <td><p>if <code>TRUE</code> (default)</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>named vector of two elements with the first element (<code>nrow</code>)
-  representing the number of rows and the second element (<code>ncol</code>)
-  representing the number of columns for an optimal plot grid to be used for
-  <code>n</code> plots in the current plot region</p>
+    <p>list of objects of class "ggplot"</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>  <span class='co'># save current graphical parameter setting</span>
-  <span class='no'>old.par</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>graphics</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/graphics/topics/par'>par</a></span>(<span class='kw'>no.readonly</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+    <pre class="examples"><div class='input'><span class='no'>data</span> <span class='kw'>&lt;-</span> <span class='fu'>data.frame</span>(
+  <span class='kw'>fruit</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"apple"</span>, <span class='st'>"cherry"</span>, <span class='st'>"apple"</span>, <span class='st'>"banana"</span>, <span class='st'>"cherry"</span>),
+  <span class='kw'>colour</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"green"</span>, <span class='st'>"red"</span>, <span class='st'>"red"</span>, <span class='st'>"yellow"</span>, <span class='st'>"green"</span>),
+  <span class='kw'>size</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"small"</span>, <span class='st'>"small"</span>, <span class='st'>"big"</span>, <span class='st'>"small"</span>, <span class='st'>"big"</span>)
+)
 
-  <span class='kw'>for</span> (<span class='no'>i</span> <span class='kw'>in</span> <span class='fl'>2</span>:<span class='fl'>5</span>) {
-
-    <span class='kw pkg'>graphics</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/graphics/topics/par'>par</a></span>(<span class='kw'>mfrow</span> <span class='kw'>=</span> <span class='kw pkg'>kwb.plot</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/kwb.plot/topics/bestRowColumnSetting'>bestRowColumnSetting</a></span>(<span class='no'>i</span>))
-
-    <span class='kw'>for</span> (<span class='no'>j</span> <span class='kw'>in</span> <span class='fl'>1</span>:<span class='no'>i</span>) {
-      <span class='fu'>plot</span>(<span class='fu'>seq_len</span>(<span class='no'>j</span>), <span class='kw'>main</span> <span class='kw'>=</span> <span class='fu'>paste0</span>(<span class='st'>"j = "</span>, <span class='no'>j</span>, <span class='st'>"/"</span>, <span class='no'>i</span>))
-    }
-  }</div><div class='img'><img src='bestRowColumnSetting-1.png' alt='' width='700' height='433' /></div><div class='img'><img src='bestRowColumnSetting-2.png' alt='' width='700' height='433' /></div><div class='img'><img src='bestRowColumnSetting-3.png' alt='' width='700' height='433' /></div><div class='input'>
-  <span class='co'># restore graphical parameter setting</span>
-  <span class='kw pkg'>graphics</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/graphics/topics/par'>par</a></span>(<span class='no'>old.par</span>)</div><div class='img'><img src='bestRowColumnSetting-4.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>plotLevelFrequencies</span>(<span class='no'>data</span>)</div><div class='output co'>#&gt; $rel__fruit_vs_colour</div><div class='img'><img src='plotLevelFrequencies-1.png' alt='' width='700' height='433' /></div><div class='output co'>#&gt; 
+#&gt; $rel__fruit_vs_size</div><div class='img'><img src='plotLevelFrequencies-2.png' alt='' width='700' height='433' /></div><div class='output co'>#&gt; 
+#&gt; $rel__colour_vs_fruit</div><div class='img'><img src='plotLevelFrequencies-3.png' alt='' width='700' height='433' /></div><div class='output co'>#&gt; 
+#&gt; $rel__colour_vs_size</div><div class='img'><img src='plotLevelFrequencies-4.png' alt='' width='700' height='433' /></div><div class='output co'>#&gt; 
+#&gt; $rel__size_vs_fruit</div><div class='img'><img src='plotLevelFrequencies-5.png' alt='' width='700' height='433' /></div><div class='output co'>#&gt; 
+#&gt; $rel__size_vs_colour</div><div class='img'><img src='plotLevelFrequencies-6.png' alt='' width='700' height='433' /></div><div class='output co'>#&gt; </div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

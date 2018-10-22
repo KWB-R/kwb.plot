@@ -4,8 +4,8 @@
 \alias{drawBoxplot}
 \title{Draw Boxplot Icon}
 \usage{
-drawBoxplot(centre.x, centre.y, boxwidth.cm = 1, boxheight.cm = boxwidth.cm,
-  whisker.cm = boxheight.cm)
+drawBoxplot(centre.x, centre.y, boxwidth.cm = 1,
+  boxheight.cm = boxwidth.cm, whisker.cm = boxheight.cm)
 }
 \arguments{
 \item{centre.x}{x coordinate in user coordinates around which the box is to be drawn}

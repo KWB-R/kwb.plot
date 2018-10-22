@@ -4,7 +4,8 @@
 \alias{mybarplot}
 \title{barplot with more flexibility on labels and axis}
 \usage{
-mybarplot(height, names.arg = NULL, cex.axis = graphics::par("cex.axis"),
+mybarplot(height, names.arg = NULL,
+  cex.axis = graphics::par("cex.axis"),
   cex.names = graphics::par("cex.axis"), ..., args.text = NULL,
   args.yaxis = NULL)
 }

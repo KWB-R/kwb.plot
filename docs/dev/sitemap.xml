@@ -46,6 +46,9 @@
     <loc>https://kwb-r.github.io/kwb.plot/reference/demo.adj.html</loc>
   </url>
   <url>
+    <loc>https://kwb-r.github.io/kwb.plot/reference/demo_theme_properties.html</loc>
+  </url>
+  <url>
     <loc>https://kwb-r.github.io/kwb.plot/reference/demo_themes_line.html</loc>
   </url>
   <url>
@@ -55,7 +58,7 @@
     <loc>https://kwb-r.github.io/kwb.plot/reference/demo_themes_text.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.plot/reference/demo_theme_properties.html</loc>
+    <loc>https://kwb-r.github.io/kwb.plot/reference/dot-defaultPlotParameter.html</loc>
   </url>
   <url>
     <loc>https://kwb-r.github.io/kwb.plot/reference/drawBoxplot.html</loc>
@@ -94,10 +97,10 @@
     <loc>https://kwb-r.github.io/kwb.plot/reference/ggplot_themes.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.plot/reference/inchesToUserWidthAndHeight.html</loc>
+    <loc>https://kwb-r.github.io/kwb.plot/reference/inLimits.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.plot/reference/inLimits.html</loc>
+    <loc>https://kwb-r.github.io/kwb.plot/reference/inchesToUserWidthAndHeight.html</loc>
   </url>
   <url>
     <loc>https://kwb-r.github.io/kwb.plot/reference/labelPositionY.html</loc>
@@ -110,6 +113,9 @@
   </url>
   <url>
     <loc>https://kwb-r.github.io/kwb.plot/reference/output_to_png.html</loc>
+  </url>
+  <url>
+    <loc>https://kwb-r.github.io/kwb.plot/reference/plotLevelFrequencies.html</loc>
   </url>
   <url>
     <loc>https://kwb-r.github.io/kwb.plot/reference/plotRain.html</loc>

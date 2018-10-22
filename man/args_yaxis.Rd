@@ -4,8 +4,8 @@
 \alias{args_yaxis}
 \title{Create argument list for axis}
 \usage{
-args_yaxis(side = 2, at = graphics::axTicks(side), labels = paste0(at,
-  unit), unit = "", las = 1, ...)
+args_yaxis(side = 2, at = graphics::axTicks(side),
+  labels = paste0(at, unit), unit = "", las = 1, ...)
 }
 \arguments{
 \item{side}{1: bottom, 2: left, 3: top, 4: right}
