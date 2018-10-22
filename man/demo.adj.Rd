@@ -4,7 +4,8 @@
 \alias{demo.adj}
 \title{Demo of Graphical Parameter "adj"}
 \usage{
-demo.adj(text = "Text", srt = c(0, 90), cex = 1, ..., to.pdf = FALSE)
+demo.adj(text = "Text", srt = c(0, 90), cex = 1, ...,
+  to.pdf = FALSE)
 }
 \arguments{
 \item{text}{text to be plotted}
@@ -22,8 +23,8 @@ Demonstration of the effect of the graphical parameter "adj" (horizontal and
   vertical adjustment)
 }
 \examples{
-  kwb.plot::demo.adj()
-  kwb.plot::demo.adj("Exampletext", srt = 30)
-  kwb.plot::demo.adj(srt = c(0, 45, 90), to.pdf = TRUE)  
-  
+kwb.plot::demo.adj()
+kwb.plot::demo.adj("Exampletext", srt = 30)
+#kwb.plot::demo.adj(srt = c(0, 45, 90), to.pdf = TRUE)  
+
 }

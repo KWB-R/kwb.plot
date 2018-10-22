@@ -14,10 +14,10 @@
 #' @export
 #' 
 #' @examples 
-#'   kwb.plot::demo.adj()
-#'   kwb.plot::demo.adj("Exampletext", srt = 30)
-#'   kwb.plot::demo.adj(srt = c(0, 45, 90), to.pdf = TRUE)  
-#'   
+#' kwb.plot::demo.adj()
+#' kwb.plot::demo.adj("Exampletext", srt = 30)
+#' #kwb.plot::demo.adj(srt = c(0, 45, 90), to.pdf = TRUE)  
+#' 
 demo.adj <- function(
   text = "Text", srt = c(0, 90), cex = 1, ..., to.pdf = FALSE
 )
