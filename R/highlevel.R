@@ -243,6 +243,8 @@ plot_variable <- function(
 #' Default Plot Parameters for Hydraulic Variables
 #' 
 #' @param parameterName one of c("type", "col", "ylab", "pch")
+#' @param variableName variable name matching
+#'   "(Q|H|v)[.](raw|signal|interpol|pred)"
 #' 
 #' @export
 #' 
