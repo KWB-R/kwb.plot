@@ -61,7 +61,7 @@ plotLevelFrequencies <- function(
     if (relative) {
       
       # Calculate the "rowwise" percentage
-      frequencies <- t(kwb.utils::columnwisePercentage(t(frequencies)))
+      frequencies <- kwb.utils::rowwisePercentage(frequencies)
     }
     
     # Create the plot title
