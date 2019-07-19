@@ -15,6 +15,11 @@ cache:
 
 # Adapt as necessary starting from here
 
+environment:
+### Add R_REMOTES_STANDALONE(for details see: https://github.com/krlmlr/r-appveyor/issues/135 
+### or https://github.com/r-lib/remotes#standalone-mode)  
+  R_REMOTES_STANDALONE: true
+
 build_script:
   - travis-tool.sh install_deps
 
