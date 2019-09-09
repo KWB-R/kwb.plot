@@ -1,5 +1,3 @@
-# kwb.plot
-
 [![Appveyor build status](https://ci.appveyor.com/api/projects/status/ljocere3ptnxw589/branch/master?svg=true)](https://ci.appveyor.com/project/KWB-R/kwb-plot/branch/master)
 [![Build Status](https://travis-ci.org/KWB-R/kwb.plot.svg?branch=master)](https://travis-ci.org/KWB-R/kwb.plot)
 [![codecov](https://codecov.io/github/KWB-R/kwb.plot/branch/master/graphs/badge.svg)](https://codecov.io/github/KWB-R/kwb.plot)
@@ -14,9 +12,3 @@ R Package Containing Helper Functions for Plotting
 #install.packages("remotes", repos = "https://cloud.r-project.org")
 remotes::install_github("KWB-R/kwb.plot")
 ```
-
-## Documentation
-
-Release: [https://kwb-r.github.io/kwb.plot](https://kwb-r.github.io/kwb.plot)
-
-Development: [https://kwb-r.github.io/kwb.plot/dev](https://kwb-r.github.io/kwb.plot/dev)
