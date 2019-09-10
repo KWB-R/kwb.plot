@@ -3,22 +3,22 @@
 #
 
 test_that("set_subtitles() works", {
-  skip_on_appveyor()
+
   expect_error(set_subtitles())
 })
 
 test_that("set_titles() works", {
-  skip_on_appveyor()
+
   expect_error(set_titles())
 })
 
 test_that("set_xlabs() works", {
-  skip_on_appveyor()
+
   expect_error(set_xlabs())
 })
 
 test_that("set_labels() works", {
-  skip_on_appveyor()
+
   expect_error(set_labels())
 })
 
