@@ -3,12 +3,10 @@
 #
 
 test_that("arrange_in_pdf() works", {
-  skip_on_appveyor()
   expect_error(arrange_in_pdf())
 })
 
 test_that("plot_all_to_pdf() works", {
-  skip_on_appveyor()
   expect_error(plot_all_to_pdf())
 })
 
