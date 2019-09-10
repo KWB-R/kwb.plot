@@ -3,12 +3,12 @@
 #
 
 test_that("arrange_in_png() works", {
-  skip_on_appveyor()
+
   expect_error(arrange_in_png())
 })
 
 test_that("output_to_png() works", {
-  skip_on_appveyor()
+
   expect_error(output_to_png())
 })
 
