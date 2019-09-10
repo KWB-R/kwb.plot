@@ -3,17 +3,17 @@
 #
 
 test_that("plotRain() works", {
-  skip_on_appveyor()
+
   expect_error(plotRain())
 })
 
 test_that("plot_variable() works", {
-  skip_on_appveyor()
+
   expect_error(plot_variable())
 })
 
 test_that(".defaultPlotParameter() works", {
-  skip_on_appveyor()
+ 
   expect_error(.defaultPlotParameter())
 })
 

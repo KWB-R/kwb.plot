@@ -3,22 +3,22 @@
 #
 
 test_that("mybarplot() works", {
-  skip_on_appveyor()
+
   expect_error(mybarplot())
 })
 
 test_that("args_mybarplot() works", {
-  skip_on_appveyor()
+
   kwb.plot:::args_mybarplot()
 })
 
 test_that("args_text() works", {
-  skip_on_appveyor()
+
   args_text()
 })
 
 test_that("args_yaxis() works", {
-  skip_on_appveyor()
+
   args_yaxis()
 })
 

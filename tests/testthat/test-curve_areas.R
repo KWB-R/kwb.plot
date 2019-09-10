@@ -3,12 +3,12 @@
 #
 
 test_that("plot_curve_areas_gg() works", {
-  skip_on_appveyor()
+
   expect_error(plot_curve_areas_gg())
 })
 
 test_that("plot_curve_area() works", {
-  skip_on_appveyor()
+
   expect_error(plot_curve_area())
 })
 
