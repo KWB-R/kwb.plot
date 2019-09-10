@@ -3,17 +3,17 @@
 #
 
 test_that("inchesToUserWidthAndHeight() works", {
-
+  skip_on_appveyor()
   expect_error(kwb.plot:::inchesToUserWidthAndHeight())
 })
 
 test_that("cmToUserWidthAndHeight() works", {
-
+  skip_on_appveyor()
   expect_error(cmToUserWidthAndHeight())
 })
 
 test_that("userWidthAndHeightToCm() works", {
-
+  skip_on_appveyor()
   expect_error(kwb.plot:::userWidthAndHeightToCm())
 })
 

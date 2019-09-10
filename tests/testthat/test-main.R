@@ -3,52 +3,52 @@
 #
 
 test_that("niceLabels() works", {
-
+  skip_on_appveyor()
   expect_error(niceLabels())
 })
 
 test_that("drawBoxplot() works", {
-
+  skip_on_appveyor()
   expect_error(drawBoxplot())
 })
 
 test_that("getPlotCharacterConstants() works", {
-
+  skip_on_appveyor()
   kwb.plot:::getPlotCharacterConstants()
 })
 
 test_that("addGridIfTrue() works", {
-
+  skip_on_appveyor()
   expect_error(kwb.plot:::addGridIfTrue())
 })
 
 test_that("addLabels() works", {
-
+  skip_on_appveyor()
   expect_error(addLabels())
 })
 
 test_that("labelPositionY() works", {
-
+  skip_on_appveyor()
   expect_error(kwb.plot:::labelPositionY())
 })
 
 test_that("alternatingPositions() works", {
-
+  skip_on_appveyor()
   kwb.plot:::alternatingPositions()
 })
 
 test_that("addTimeAxis() works", {
-
+  skip_on_appveyor()
   expect_error(addTimeAxis())
 })
 
 test_that("bestRowColumnSetting() works", {
-
+  skip_on_appveyor()
   expect_error(bestRowColumnSetting())
 })
 
 test_that("setMargins() works", {
-
+  skip_on_appveyor()
   setMargins()
 })
 

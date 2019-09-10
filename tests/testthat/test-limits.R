@@ -3,22 +3,22 @@
 #
 
 test_that("getCurrentLimits() works", {
-
+  skip_on_appveyor()
   getCurrentLimits()
 })
 
 test_that("inLimits() works", {
-
+  skip_on_appveyor()
   expect_error(inLimits())
 })
 
 test_that("appropriateLimits() works", {
-
+  skip_on_appveyor()
   expect_error(appropriateLimits())
 })
 
 test_that("userCoordinatesToLimits() works", {
-
+  skip_on_appveyor()
   expect_error(userCoordinatesToLimits())
 })
 

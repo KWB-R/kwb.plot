@@ -3,52 +3,52 @@
 #
 
 test_that("demo.adj() works", {
-
+  skip_on_appveyor()
   demo.adj()
 })
 
 test_that("preview_themes() works", {
-
+  skip_on_appveyor()
   preview_themes()
 })
 
 test_that("ggplot_themes() works", {
-
+  skip_on_appveyor()
   kwb.plot:::ggplot_themes()
 })
 
 test_that("apply_elements_text() works", {
-
+  skip_on_appveyor()
   expect_error(kwb.plot:::apply_elements_text())
 })
 
 test_that("demo_theme_properties() works", {
-
+  skip_on_appveyor()
   demo_theme_properties()
 })
 
 test_that("demo_themes_text() works", {
-
+  skip_on_appveyor()
   kwb.plot:::demo_themes_text()
 })
 
 test_that("demo_themes_rect() works", {
-
+  skip_on_appveyor()
   kwb.plot:::demo_themes_rect()
 })
 
 test_that("demo_themes_line() works", {
-
+  skip_on_appveyor()
   kwb.plot:::demo_themes_line()
 })
 
 test_that("element_types() works", {
-
+  skip_on_appveyor()
   kwb.plot:::element_types()
 })
 
 test_that("to_element_themes() works", {
-
+  skip_on_appveyor()
   expect_error(kwb.plot:::to_element_themes())
 })
 

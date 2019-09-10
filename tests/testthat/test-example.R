@@ -3,12 +3,12 @@
 #
 
 test_that("example_plot() works", {
-
+  skip_on_appveyor()
   example_plot()
 })
 
 test_that("example_plot_2() works", {
-
+  skip_on_appveyor()
   example_plot_2()
 })
 

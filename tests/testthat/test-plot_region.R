@@ -3,27 +3,27 @@
 #
 
 test_that("getPlotRegionRatio() works", {
-
+  skip_on_appveyor()
   kwb.plot:::getPlotRegionRatio()
 })
 
 test_that("getPlotRegionSizeInUserCoords() works", {
-
+  skip_on_appveyor()
   getPlotRegionSizeInUserCoords()
 })
 
 test_that("getPlotRegionSizeInPixels() works", {
-
+  skip_on_appveyor()
   getPlotRegionSizeInPixels()
 })
 
 test_that("getPlotRegionSizeInInches() works", {
-
+  skip_on_appveyor()
   getPlotRegionSizeInInches()
 })
 
 test_that("getPlotRegionSizeInCm() works", {
-
+  skip_on_appveyor()
   getPlotRegionSizeInCm()
 })
 
