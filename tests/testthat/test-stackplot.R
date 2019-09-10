@@ -3,12 +3,12 @@
 #
 
 test_that("stackplot() works", {
-  skip_on_appveyor()
+
   expect_error(stackplot())
 })
 
 test_that("stackplotLayout() works", {
-  skip_on_appveyor()
+
   expect_error(kwb.plot:::stackplotLayout())
 })
 
