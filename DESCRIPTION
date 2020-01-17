@@ -1,6 +1,6 @@
 Package: kwb.plot
 Title: some useful functions for plotting
-Version: 0.3.0
+Version: 0.3.0.9000
 Authors@R: 
     c(person(given = "Hauke",
              family = "Sonnenberg",
