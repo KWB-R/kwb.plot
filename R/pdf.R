@@ -7,7 +7,7 @@
 #' 
 #' @param plots list of ggplot objects
 #' @param landscape passed to \code{\link[kwb.utils]{preparePdf}}
-#' @param \dots arguments passed to \code{\link[gridExtra]{grid.arrange}}
+#' @param \dots arguments passed to \code{\link[gridExtra:arrangeGrob]{grid.arrange}}
 #' 
 #' @export
 #' 

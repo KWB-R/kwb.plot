@@ -11,7 +11,7 @@ arrange_in_pdf(plots, landscape = TRUE, ...)
 
 \item{landscape}{passed to \code{\link[kwb.utils]{preparePdf}}}
 
-\item{\dots}{arguments passed to \code{\link[gridExtra]{grid.arrange}}}
+\item{\dots}{arguments passed to \code{\link[gridExtra:arrangeGrob]{grid.arrange}}}
 }
 \description{
 Arrange ggplot objects with gridExtra::grid.arrange and write the result

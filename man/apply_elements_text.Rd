@@ -10,7 +10,7 @@ apply_elements_text(x, elements)
 \item{x}{ggplot object}
 
 \item{elements}{objects as created by function 
-\code{\link[ggplot2]{element_text}}}
+\code{\link[ggplot2:element]{element_text}}}
 }
 \description{
 Apply themes with given text properties to a plot

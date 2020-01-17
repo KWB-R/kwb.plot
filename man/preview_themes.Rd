@@ -18,7 +18,7 @@ preview_themes(x = example_plot(), themes = ggplot_themes(),
 \item{landscape}{if \code{TRUE} (default) the output to a PDF file will be in
 DIN A4 landscape format, else in DIN A4 portrait format}
 
-\item{\dots}{arguments passed to \code{\link[gridExtra]{grid.arrange}}}
+\item{\dots}{arguments passed to \code{\link[gridExtra:arrangeGrob]{grid.arrange}}}
 }
 \description{
 Preview the effects of ggplot2-themes on a given plot

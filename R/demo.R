@@ -76,7 +76,7 @@ demo.adj <- function(
 #' @param to_pdf if \code{TRUE} (default) the output goes to a PDF file
 #' @param landscape if \code{TRUE} (default) the output to a PDF file will be in
 #'   DIN A4 landscape format, else in DIN A4 portrait format
-#' @param \dots arguments passed to \code{\link[gridExtra]{grid.arrange}}
+#' @param \dots arguments passed to \code{\link[gridExtra:arrangeGrob]{grid.arrange}}
 #' 
 #' @export
 #' 
@@ -119,7 +119,7 @@ ggplot_themes <- function()
 #' 
 #' @param x ggplot object
 #' @param elements objects as created by function 
-#' \code{\link[ggplot2]{element_text}}
+#' \code{\link[ggplot2:element]{element_text}}
 apply_elements_text <- function(x, elements)
 {
   plots <- lapply(elements, function(element) {

@@ -12,7 +12,7 @@ arrange_in_png(plots, filename, ...)
 \item{filename}{full path to the PNG file to be written. The extension ".png" will be 
 automatically appended if it is omitted}
 
-\item{\dots}{arguments passed to \code{\link[gridExtra]{grid.arrange}}}
+\item{\dots}{arguments passed to \code{\link[gridExtra:arrangeGrob]{grid.arrange}}}
 }
 \description{
 Arrange ggplot objects with gridExtra::grid.arrange and write the result

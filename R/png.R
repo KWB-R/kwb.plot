@@ -8,7 +8,7 @@
 #' @param plots list of ggplot objects
 #' @param filename full path to the PNG file to be written. The extension ".png" will be 
 #'   automatically appended if it is omitted
-#' @param \dots arguments passed to \code{\link[gridExtra]{grid.arrange}}
+#' @param \dots arguments passed to \code{\link[gridExtra:arrangeGrob]{grid.arrange}}
 #' 
 #' @export
 #' 
