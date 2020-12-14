@@ -4,10 +4,22 @@
 \alias{plotRain}
 \title{Plot Rain Data as Bars}
 \usage{
-plotRain(timestamps, values, gaugeName = "", xlim = NULL,
-  ylim = NULL, signal.width = NA, shift.to.begin = 0, col = "blue",
-  pch = 16, reverse.ylim = TRUE, las = 1, innerMargins = c(0, 0, 0,
-  0), add.time.axis = TRUE, ...)
+plotRain(
+  timestamps,
+  values,
+  gaugeName = "",
+  xlim = NULL,
+  ylim = NULL,
+  signal.width = NA,
+  shift.to.begin = 0,
+  col = "blue",
+  pch = 16,
+  reverse.ylim = TRUE,
+  las = 1,
+  innerMargins = c(0, 0, 0, 0),
+  add.time.axis = TRUE,
+  ...
+)
 }
 \arguments{
 \item{timestamps}{timestamps}

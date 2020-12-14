@@ -4,14 +4,24 @@
 \alias{plot_variable}
 \title{Plot a Variable of a Data Frame}
 \usage{
-plot_variable(hydraulicData, variableName = names(hydraulicData)[[2]],
+plot_variable(
+  hydraulicData,
+  variableName = names(hydraulicData)[[2]],
   type = .defaultPlotParameter("type", variableName),
   col = .defaultPlotParameter("col", variableName),
   ylab = .defaultPlotParameter("ylab", variableName),
-  pch = .defaultPlotParameter("pch", variableName), xlim = NULL,
-  ylim = NULL, add = FALSE, plot.grid = TRUE, innerMargins = c(0,
-  0, 0, 0), absolute = FALSE, reverse.ylim = FALSE,
-  add.time.axis = TRUE, time.axis.in.margins = FALSE, ...)
+  pch = .defaultPlotParameter("pch", variableName),
+  xlim = NULL,
+  ylim = NULL,
+  add = FALSE,
+  plot.grid = TRUE,
+  innerMargins = c(0, 0, 0, 0),
+  absolute = FALSE,
+  reverse.ylim = FALSE,
+  add.time.axis = TRUE,
+  time.axis.in.margins = FALSE,
+  ...
+)
 }
 \arguments{
 \item{hydraulicData}{data frame with at least two columns. First column is expected to contain

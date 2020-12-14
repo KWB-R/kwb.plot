@@ -4,8 +4,13 @@
 \alias{preview_themes}
 \title{Preview the Effects of Themes on a Plot}
 \usage{
-preview_themes(x = example_plot(), themes = ggplot_themes(),
-  to_pdf = TRUE, landscape = TRUE, ...)
+preview_themes(
+  x = example_plot(),
+  themes = ggplot_themes(),
+  to_pdf = TRUE,
+  landscape = TRUE,
+  ...
+)
 }
 \arguments{
 \item{x}{ggplot object}

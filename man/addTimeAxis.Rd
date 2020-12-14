@@ -4,8 +4,14 @@
 \alias{addTimeAxis}
 \title{Add Time Axis}
 \usage{
-addTimeAxis(myDateTime, xlim = range(myDateTime), n = 20,
-  time.format = NULL, add.grid = FALSE, padj = 0.5)
+addTimeAxis(
+  myDateTime,
+  xlim = range(myDateTime),
+  n = 20,
+  time.format = NULL,
+  add.grid = FALSE,
+  padj = 0.5
+)
 }
 \arguments{
 \item{myDateTime}{vector of POSIXct timestamps}
