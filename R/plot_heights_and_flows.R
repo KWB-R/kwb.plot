@@ -1,6 +1,7 @@
 # barplotFlows -----------------------------------------------------------------
 barplotFlows <- function(
-  flows, cols, bar_width = 4, xspace = 3 * bar_width
+  flows, cols, bar_width = 4, xspace = 3 * bar_width, xlim = NULL, ylim = NULL,
+  xstart = 0
 )
 {
   stopifnot(is.matrix(flows), nrow(flows) == ncol(flows))
@@ -14,11 +15,14 @@ barplotFlows <- function(
   n <- length(heights)
   ymax <- max(heights)
   
-  initPlot(xlim = c(-xspace, (n + 1) * xspace), ylim = c(0, ymax))
+  initPlot(
+    xlim = kwb.utils::defaultIfNULL(xlim, c(-xspace, (n + 1) * xspace)), 
+    ylim = kwb.utils::defaultIfNULL(ylim, c(0, ymax))
+  )
   
   for (i in seq_along(heights)) {
     #i <- 1
-    x <- (i- 1L) * xspace
+    x <- xstart + (i- 1L) * xspace
     y <- heights[i]
     drawBar(y, cols[i], x = x, w = bar_width)
     plotInOut(
