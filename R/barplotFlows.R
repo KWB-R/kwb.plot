@@ -1,7 +1,7 @@
 # barplotFlows -----------------------------------------------------------------
 barplotFlows <- function(
-  flows, cols = seq_len(nrow(flows)), bar_width = 4, xspace = 3 * bar_width, 
-  xlim = NULL, ylim = NULL, xstart = 0, add = FALSE
+  flows, cols = seq_len(nrow(flows)), bar_width = 1, xspace = 4 * bar_width, 
+  xlim = NULL, ylim = NULL, xstart = 0, add = FALSE, arrow_length = 1, ...
 )
 {
   stopifnot(is.matrix(flows), nrow(flows) == ncol(flows))
@@ -21,7 +21,7 @@ barplotFlows <- function(
       xlim = kwb.utils::defaultIfNULL(xlim, c(-xspace, (n + 1) * xspace)), 
       ylim = kwb.utils::defaultIfNULL(ylim, c(0, ymax))
     )
-  }  
+  }
   
   indices <- seq_along(heights)
   xpos <- xstart + (indices - 1L) * xspace
@@ -37,7 +37,9 @@ barplotFlows <- function(
       out = flows[, i], 
       inp = flows[i, ], 
       cols, 
-      dx = bar_width / 2
+      dx = bar_width / 2,
+      length = arrow_length,
+      ...
     )
   }
   
@@ -65,7 +67,14 @@ drawBar <- function(h, col, w = 4, x = 0)
 
 # plotInOut --------------------------------------------------------------------
 plotInOut <- function(
-  y, out, inp, cols = seq_along(out), x = 0, dx = 2, arrow_type = "straight"
+  y, 
+  out, 
+  inp, 
+  cols = seq_along(out), 
+  x = 0, 
+  dx = 2, 
+  arrow_type = "straight",
+  ...
 )
 {
   arrow_fun = kwb.utils::createAccessor(arrowFunctions(arrow_type, dx = dx))
@@ -77,14 +86,14 @@ plotInOut <- function(
   r1 <- y - cumsum(out[-i])
   r2 <- c(y, r1[-n])
   
-  mapply(arrow_fun("output"), r1, r2, cols[-i], x)
+  mapply(arrow_fun("output"), r1, r2, cols[-i], x, MoreArgs = list(...))
   
   y <- r1[n]
   
   r2 <- y + cumsum(rev(inp[-i]))
   r1 <- c(y, r2[-n])
   
-  mapply(arrow_fun("input"), r1, r2, rev(cols[-i]), x)
+  mapply(arrow_fun("input"), r1, r2, rev(cols[-i]), x, MoreArgs = list(...))
 }
 
 # arrowFunctions ---------------------------------------------------------------
@@ -92,11 +101,23 @@ arrowFunctions <- function(key, dx = 2)
 {
   kwb.utils::selectElements(elements = key, list(
     straight = list(
-      output = function(r1, r2, col, x, ...) blockArrow(
-        direction = "right", x + dx, r1, width = r2 - r1, col = col, ...
+      output = function(r1, r2, col, x, length, ...) blockArrow(
+        direction = "right", 
+        x = x + dx, 
+        y = r1,
+        length = length,
+        width = r2 - r1, 
+        col = col, 
+        ...
       ), 
-      input = function(r1, r2, col, x, ...) blockArrow(
-        direction = "left", x - dx, r1, width = r2 - r1, col = col, ...
+      input = function(r1, r2, col, x, length, ...) blockArrow(
+        direction = "right", 
+        x = x - dx - length, 
+        y = r1,
+        length = length,
+        width = r2 - r1, 
+        col = col, 
+        ...
       )
     ),
     bent = list(
