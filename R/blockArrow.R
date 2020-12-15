@@ -29,7 +29,7 @@ blockArrow <- function(
   xrel <- c(0, signum * length, signum * (length + tip), signum * length, 0)
   yrel <- c(0, 0, width/2, width, width)
   
-  polygon(
+  graphics::polygon(
     x = x + if (is_horizontal) xrel else yrel,
     y = y + if (is_horizontal) yrel else xrel,
     col = col,
