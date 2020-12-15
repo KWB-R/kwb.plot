@@ -1,7 +1,7 @@
 # barplotFlows -----------------------------------------------------------------
 barplotFlows <- function(
-  flows, cols, bar_width = 4, xspace = 3 * bar_width, xlim = NULL, ylim = NULL,
-  xstart = 0
+  flows, cols = seq_len(nrow(flows)), bar_width = 4, xspace = 3 * bar_width, 
+  xlim = NULL, ylim = NULL, xstart = 0, add = FALSE
 )
 {
   stopifnot(is.matrix(flows), nrow(flows) == ncol(flows))
@@ -14,11 +14,14 @@ barplotFlows <- function(
   
   n <- length(heights)
   ymax <- max(heights)
-  
-  initPlot(
-    xlim = kwb.utils::defaultIfNULL(xlim, c(-xspace, (n + 1) * xspace)), 
-    ylim = kwb.utils::defaultIfNULL(ylim, c(0, ymax))
-  )
+
+  if (! add) {
+    
+    initPlot(
+      xlim = kwb.utils::defaultIfNULL(xlim, c(-xspace, (n + 1) * xspace)), 
+      ylim = kwb.utils::defaultIfNULL(ylim, c(0, ymax))
+    )
+  }  
   
   indices <- seq_along(heights)
   xpos <- xstart + (indices - 1L) * xspace
@@ -74,14 +77,14 @@ plotInOut <- function(
   r1 <- y - cumsum(out[-i])
   r2 <- c(y, r1[-n])
   
-  mapply(arrow_fun("out"), r1, r2, cols[-i], x)
+  mapply(arrow_fun("output"), r1, r2, cols[-i], x)
   
   y <- r1[n]
   
   r2 <- y + cumsum(rev(inp[-i]))
   r1 <- c(y, r2[-n])
   
-  mapply(arrow_fun("inp"), r1, r2, rev(cols[-i]), x)
+  mapply(arrow_fun("input"), r1, r2, rev(cols[-i]), x)
 }
 
 # arrowFunctions ---------------------------------------------------------------
@@ -89,11 +92,11 @@ arrowFunctions <- function(key, dx = 2)
 {
   kwb.utils::selectElements(elements = key, list(
     straight = list(
-      out = function(r1, r2, col, x) arrowSide(
-        r1, r2, col = col, x = x + dx
+      output = function(r1, r2, col, x, ...) blockArrow(
+        direction = "right", x + dx, r1, width = r2 - r1, col = col, ...
       ), 
-      inp = function(r1, r2, col, x) arrowSide(
-        r1, r2, col = col, x = x - dx, left = TRUE
+      input = function(r1, r2, col, x, ...) blockArrow(
+        direction = "left", x - dx, r1, width = r2 - r1, col = col, ...
       )
     ),
     bent = list(
@@ -105,29 +108,6 @@ arrowFunctions <- function(key, dx = 2)
       )
     ) 
   ))
-}
-
-# arrowSide -------------------------------------------------------------------
-arrowSide <- function(
-  r1, r2, col, x = 0, left = FALSE, tip = 1, length = 1
-)
-{
-  x <- if (left) {
-    
-    x2 <- x - length
-    c(x2, x2, x, x + tip, x)
-    
-  } else {
-    
-    x2 <- x + length
-    c(x, x, x2, x2 + tip, x2)
-  } 
-  
-  graphics::polygon(
-    x = x, 
-    y = c(r1, r2, r2, r1 + (r2 - r1) / 2, r1), 
-    col = col
-  )
 }
 
 # drawCircle ------------------------------------------------------------------
