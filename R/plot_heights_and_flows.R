@@ -20,9 +20,12 @@ barplotFlows <- function(
     ylim = kwb.utils::defaultIfNULL(ylim, c(0, ymax))
   )
   
-  for (i in seq_along(heights)) {
+  indices <- seq_along(heights)
+  xpos <- xstart + (indices - 1L) * xspace
+  
+  for (i in indices) {
     #i <- 1
-    x <- xstart + (i- 1L) * xspace
+    x <- xpos[i]
     y <- heights[i]
     drawBar(y, cols[i], x = x, w = bar_width)
     plotInOut(
@@ -34,6 +37,8 @@ barplotFlows <- function(
       dx = bar_width / 2
     )
   }
+  
+  invisible(xpos)
 }
 
 # initPlot ---------------------------------------------------------------------
