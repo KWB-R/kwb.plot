@@ -1,24 +1,27 @@
 # barplotFlows -----------------------------------------------------------------
 barplotFlows <- function(
   flows, cols = seq_len(nrow(flows)), bar_width = 1, xspace = 4 * bar_width, 
-  xlim = NULL, ylim = NULL, xstart = 0, add = FALSE, arrow_length = 1, ...
+  xlim = NULL, ylim = NULL, xstart = 0, add = FALSE, arrow_length = 1, 
+  tip = 0.1 * arrow_length, label = TRUE, cex.text = 1
 )
 {
-  stopifnot(is.matrix(flows), nrow(flows) == ncol(flows))
+  kwb.utils::stopIfNotMatrix(flows)
+  stopifnot(nrow(flows) == ncol(flows))
   stopifnot(is.atomic(cols), length(cols) == nrow(flows))
-  
+
+  # Helper function
+  unset_ith <- function(x, i) `[<-`(x, i, NA)
+
   heights <- colSums(flows)
   
-  # Clear diagonal elements
-  flows[which(diag(nrow(flows)) == 1)] <- NA
-  
-  n <- length(heights)
-  ymax <- max(heights)
-
   if (! add) {
     
+    xleft <- bar_width/2 + 2 * arrow_length
+    xsize <- (nrow(flows) - 1) * xspace + 2 * xleft
+    ymax <- 1.1 * max(c(rowSums(flows), heights))
+    
     initPlot(
-      xlim = kwb.utils::defaultIfNULL(xlim, c(-xspace, (n + 1) * xspace)), 
+      xlim = kwb.utils::defaultIfNULL(xlim, c(-xleft, -xleft + xsize)), 
       ylim = kwb.utils::defaultIfNULL(ylim, c(0, ymax))
     )
   }
@@ -34,14 +37,20 @@ barplotFlows <- function(
     plotInOut(
       x = x, 
       y = y, 
-      out = flows[, i], 
-      inp = flows[i, ], 
+      out = unset_ith(flows[, i], i), # set i-th element to NA
+      inp = unset_ith(flows[i, ], i), 
       cols, 
       dx = bar_width / 2,
       length = arrow_length,
-      ...
+      tip = tip
     )
   }
+
+  if (label) {
+    labelBarplotFlows(
+      xpos, flows, bar_width, arrow_length, tip, cex.text = cex.text
+    )
+  }  
   
   invisible(xpos)
 }
@@ -179,4 +188,43 @@ degreeToPhi <- function(x) (90 - x) / 180 * pi
 phiToXy <- function(phi)
 {
   cbind(x = cos(phi), y = sin(phi))
+}
+
+# labelBarplotFlows ------------------------------------------------------------
+labelBarplotFlows <- function(
+  x, flows, bar_width, arrow_length, tip, adj = c(0.5, -0.3), cex.text = 1
+)
+{
+  # Helper function
+  text_above <- function(x, y, text = as.character(y)) {
+    graphics::text(x, y, text, adj = adj, cex = cex.text)
+  }
+  
+  # Helper function
+  splitFlows <- function(flows) {
+    i <- i <- seq_len(nrow(flows))
+    diag_coords <- cbind(i, i)
+    list(
+      input = rowSums(flows) - flows[diag_coords],
+      output = colSums(flows) - flows[diag_coords]
+    )
+  }
+  
+  # Helper function
+  labelled_arrow <- function(x, y0, value, length = 0.1) {
+    y1 <- y0 + value
+    graphics::arrows(x, y0, x, y1, length = length)
+    text_above(x, pmax(y0, y1), sprintf("%+.0f", value))
+    y1
+  }
+  
+  # Label the bars
+  text_above(x, colSums(flows))
+  
+  # Draw labelled arrows up and down
+  offset <- bar_width/2 + arrow_length
+  flow_parts <- splitFlows(flows)
+  y0 <- colSums(flows)
+  y1 <- labelled_arrow(x + offset + 2 * tip, y0, value = - flow_parts$output)
+  labelled_arrow(x - offset - tip, y1, value = flow_parts$input)
 }
