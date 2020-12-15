@@ -1,8 +1,8 @@
 # barplotFlows -----------------------------------------------------------------
 barplotFlows <- function(
-  flows, cols = seq_len(nrow(flows)), bar_width = 1, xspace = 4 * bar_width, 
-  xlim = NULL, ylim = NULL, xstart = 0, add = FALSE, arrow_length = 1, 
-  tip = 0.1 * arrow_length, label = TRUE, cex.text = 1
+  flows, cols = seq_len(nrow(flows)), bar_width = 1, xspace = 4, 
+  xlim = NULL, ylim = NULL, xstart = 0, add = FALSE, arrow_length = 0.5, 
+  tip = 0.2, label = TRUE, cex.text = 0.8
 )
 {
   kwb.utils::stopIfNotMatrix(flows)
