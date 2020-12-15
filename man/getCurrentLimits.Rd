@@ -4,8 +4,11 @@
 \alias{getCurrentLimits}
 \title{Get Current xlim and ylim}
 \usage{
-getCurrentLimits(type = "xy", xaxs = graphics::par("xaxs"),
-  yaxs = graphics::par("yaxs"))
+getCurrentLimits(
+  type = "xy",
+  xaxs = graphics::par("xaxs"),
+  yaxs = graphics::par("yaxs")
+)
 }
 \arguments{
 \item{type}{one of "x", "y" or "xy", see section "Value"}

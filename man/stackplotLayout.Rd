@@ -4,8 +4,7 @@
 \alias{stackplotLayout}
 \title{Create Layout for "stackplot"}
 \usage{
-stackplotLayout(heights.cm, margins.top.cm, margins.bottom.cm,
-  show = FALSE)
+stackplotLayout(heights.cm, margins.top.cm, margins.bottom.cm, show = FALSE)
 }
 \arguments{
 \item{heights.cm}{heights of plots in cm}

@@ -4,8 +4,7 @@
 \alias{plotLevelFrequencies}
 \title{Plot Frequencies of Level Combinations}
 \usage{
-plotLevelFrequencies(data, vars_1 = NULL, vars_2 = NULL,
-  relative = TRUE)
+plotLevelFrequencies(data, vars_1 = NULL, vars_2 = NULL, relative = TRUE)
 }
 \arguments{
 \item{data}{data frame}
