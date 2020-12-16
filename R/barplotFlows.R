@@ -3,7 +3,7 @@ barplotFlows <- function(
   flows, cols = seq_len(nrow(flows)), bar_width = 1, xspace = 4, 
   xlim = NULL, ylim = NULL, xstart = 0, add = FALSE, arrow_length = 0.5, 
   tip = 0.2, label_flows = TRUE, label_bars = FALSE, cex.text = 0.8,
-  cols_bars = cols, cols_flows = cols
+  cols_bars = makeTransparent(cols), cols_flows = cols
 )
 {
   # Local helper functions
