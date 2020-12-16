@@ -2,15 +2,18 @@
 barplotFlows <- function(
   flows, cols = seq_len(nrow(flows)), bar_width = 1, xspace = 4, 
   xlim = NULL, ylim = NULL, xstart = 0, add = FALSE, arrow_length = 0.5, 
-  tip = 0.2, label_flows = TRUE, label_bars = FALSE, cex.text = 0.8
+  tip = 0.2, label_flows = TRUE, label_bars = FALSE, cex.text = 0.8,
+  cols_bars = cols, cols_flows = cols
 )
 {
+  # Local helper functions
+  check_cols <- function(x) stopifnot(is.atomic(x), length(x) == nrow(flows))
+  unset_ith <- function(x, i) `[<-`(x, i, NA)
+  
   kwb.utils::stopIfNotMatrix(flows)
   stopifnot(nrow(flows) == ncol(flows))
-  stopifnot(is.atomic(cols), length(cols) == nrow(flows))
-
-  # Helper function
-  unset_ith <- function(x, i) `[<-`(x, i, NA)
+  check_cols(cols_bars)
+  check_cols(cols_flows)
 
   heights <- colSums(flows)
   
@@ -33,13 +36,13 @@ barplotFlows <- function(
     #i <- 1
     x <- xpos[i]
     y <- heights[i]
-    drawBar(y, cols[i], x = x, w = bar_width)
-    plotInOut(
+    drawBar(y, cols_bars[i], x = x, w = bar_width)
+    plotFlowArrows(
       x = x, 
       y = y, 
       out = unset_ith(flows[, i], i), # set i-th element to NA
       inp = unset_ith(flows[i, ], i), 
-      cols, 
+      cols_flows, 
       dx = bar_width / 2,
       length = arrow_length,
       tip = tip
@@ -79,8 +82,8 @@ drawBar <- function(h, col, w = 4, x = 0)
   )
 }
 
-# plotInOut --------------------------------------------------------------------
-plotInOut <- function(
+# plotFlowArrows ---------------------------------------------------------------
+plotFlowArrows <- function(
   y, 
   out, 
   inp, 
