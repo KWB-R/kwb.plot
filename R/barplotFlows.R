@@ -2,7 +2,7 @@
 barplotFlows <- function(
   flows, cols = seq_len(nrow(flows)), bar_width = 1, xspace = 4, 
   xlim = NULL, ylim = NULL, xstart = 0, add = FALSE, arrow_length = 0.5, 
-  tip = 0.2, label = TRUE, cex.text = 0.8
+  tip = 0.2, label_flows = TRUE, label_bars = FALSE, cex.text = 0.8
 )
 {
   kwb.utils::stopIfNotMatrix(flows)
@@ -46,7 +46,12 @@ barplotFlows <- function(
     )
   }
 
-  if (label) {
+  # Label the bars
+  if (label_bars) {
+    text_above(x, colSums(flows))
+  }
+  
+  if (label_flows) {
     labelBarplotFlows(
       xpos, flows, bar_width, arrow_length, tip, cex.text = cex.text
     )
@@ -191,15 +196,8 @@ phiToXy <- function(phi)
 }
 
 # labelBarplotFlows ------------------------------------------------------------
-labelBarplotFlows <- function(
-  x, flows, bar_width, arrow_length, tip, adj = c(0.5, -0.3), cex.text = 1
-)
+labelBarplotFlows <- function(x, flows, bar_width, arrow_length, tip, ...)
 {
-  # Helper function
-  text_above <- function(x, y, text = as.character(y)) {
-    graphics::text(x, y, text, adj = adj, cex = cex.text)
-  }
-  
   # Helper function
   splitFlows <- function(flows) {
     i <- i <- seq_len(nrow(flows))
@@ -218,13 +216,18 @@ labelBarplotFlows <- function(
     y1
   }
   
-  # Label the bars
-  text_above(x, colSums(flows))
-  
   # Draw labelled arrows up and down
   offset <- bar_width/2 + arrow_length
   flow_parts <- splitFlows(flows)
   y0 <- colSums(flows)
   y1 <- labelled_arrow(x + offset + 2 * tip, y0, value = - flow_parts$output)
   labelled_arrow(x - offset - tip, y1, value = flow_parts$input)
+}
+
+# Helper function
+text_above <- function(
+  x, y, text = as.character(y), adj = c(0.5, -0.3), cex.text = 1
+)
+{
+  graphics::text(x, y, text, adj = adj, cex = cex.text)
 }
