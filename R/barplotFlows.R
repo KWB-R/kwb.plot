@@ -60,7 +60,15 @@ barplotFlows <- function(
     )
   }  
   
-  invisible(xpos)
+  # Get the list of arguments passed to this function. Remove the last entry 
+  # representing the body of this function
+  remove_last <- function(x) x[-length(x)]
+  args <- list()
+  for (name in remove_last(names(as.list(args(barplotFlows))))) {
+    args[[name]] <- get(name)
+  }
+  
+  invisible(structure(xpos, args = args))
 }
 
 # initPlot ---------------------------------------------------------------------
