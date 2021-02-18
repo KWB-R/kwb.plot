@@ -86,6 +86,7 @@ preview_themes <- function(
 )
 {
   plots <- lapply(themes, function(theme) x + theme)
+  
   plots <- set_titles(plots, names(themes))
   
   if (to_pdf) {
@@ -105,12 +106,24 @@ ggplot_themes <- function()
 {
   envir <- asNamespace("ggplot2")
   
-  no_themes <- c("theme_all_null", "theme_get", "theme_set", "theme_env")
-  theme_names <- grep("^theme_", ls(envir = envir), value = TRUE)
-  theme_names <- setdiff(theme_names, no_themes)
+  # Find functions returning complete themes
+  #theme_names <- grep("^theme_", ls(envir = envir), value = TRUE)
+  #cat(kwb.utils::stringList(theme_names, qchar = '"'))
   
-  lapply(kwb.utils::toNamedList(theme_names), function(function_name) {
-    do.call(get(function_name, envir = envir), list())
+  theme_names <- c(
+    "theme_bw",
+    "theme_classic",
+    "theme_dark",
+    "theme_gray",
+    "theme_grey", 
+    "theme_light",
+    "theme_linedraw",
+    "theme_minimal",
+    "theme_void"
+  )
+
+  lapply(stats::setNames(nm = theme_names), function(name) {
+    do.call(get(name, envir = envir), list())
   })
 }
 

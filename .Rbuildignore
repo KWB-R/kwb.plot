@@ -9,3 +9,4 @@ _pkgdown.yaml
 ^\.travis\.yml$
 ^\.gitlab-ci\.yml$
 ^LICENSE\.md$
+^\.github$
