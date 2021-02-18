@@ -85,7 +85,13 @@ preview_themes <- function(
   landscape = TRUE, ...
 )
 {
-  plots <- lapply(themes, function(theme) x + theme)
+  plots <- lapply(themes, function(theme) try(x + theme))
+  
+  succeeded <- ! sapply(plots, inherits, "try-error")
+  
+  themes <- themes[succeeded]
+  plots <- plots[succeeded]
+  
   plots <- set_titles(plots, names(themes))
   
   if (to_pdf) {
