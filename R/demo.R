@@ -85,12 +85,7 @@ preview_themes <- function(
   landscape = TRUE, ...
 )
 {
-  plots <- lapply(themes, function(theme) try(x + theme))
-  
-  succeeded <- ! sapply(plots, inherits, "try-error")
-  
-  themes <- themes[succeeded]
-  plots <- plots[succeeded]
+  plots <- lapply(themes, function(theme) x + theme)
   
   plots <- set_titles(plots, names(themes))
   
