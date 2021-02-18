@@ -106,7 +106,10 @@ ggplot_themes <- function()
   envir <- asNamespace("ggplot2")
   
   theme_names <- grep("^theme_", ls(envir = envir), value = TRUE)
-  theme_names <- setdiff(theme_names, c("theme_get", "theme_set", "theme_env"))
+  
+  theme_names <- setdiff(theme_names, c(
+    "theme_get", "theme_set", "theme_update", "theme_replace", "theme_env"
+  ))
   
   lapply(kwb.utils::toNamedList(theme_names), function(function_name) {
     do.call(get(function_name, envir = envir), list())
