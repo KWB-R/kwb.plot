@@ -4,8 +4,14 @@
 \alias{plot_curve_areas_gg}
 \title{Plot Filled Areas below Curve Lines using ggplot}
 \usage{
-plot_curve_areas_gg(x = seq_along(y_list[[1]]), y_list, col = NULL,
-  stack = FALSE, legend = TRUE, line_colour = "black")
+plot_curve_areas_gg(
+  x = seq_along(y_list[[1]]),
+  y_list,
+  col = NULL,
+  stack = FALSE,
+  legend = TRUE,
+  line_colour = "black"
+)
 }
 \arguments{
 \item{x}{x positions of each curve given in \code{y_list}}

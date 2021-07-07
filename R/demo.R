@@ -121,7 +121,7 @@ ggplot_themes <- function()
     "theme_minimal",
     "theme_void"
   )
-  
+
   lapply(stats::setNames(nm = theme_names), function(name) {
     do.call(get(name, envir = envir), list())
   })

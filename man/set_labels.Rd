@@ -4,8 +4,14 @@
 \alias{set_labels}
 \title{Set the Labels in a List of ggplot Objects}
 \usage{
-set_labels(plots, ..., indices = seq_along(plots), label_data = NULL,
-  action = c("replace", "append", "prepend")[1], sep = " ")
+set_labels(
+  plots,
+  ...,
+  indices = seq_along(plots),
+  label_data = NULL,
+  action = c("replace", "append", "prepend")[1],
+  sep = " "
+)
 }
 \arguments{
 \item{plots}{list of ggplot objects as returned by \code{ggplot}}

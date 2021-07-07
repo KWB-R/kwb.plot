@@ -4,8 +4,16 @@
 \alias{output_to_png}
 \title{Redirect Output of Plot Function to PNG file}
 \usage{
-output_to_png(FUN, args, filename, size = unlist(kwb.utils::DIN.A4()),
-  units = "cm", res = 300, ..., dbg = TRUE)
+output_to_png(
+  FUN,
+  args,
+  filename,
+  size = unlist(kwb.utils::DIN.A4()),
+  units = "cm",
+  res = 300,
+  ...,
+  dbg = TRUE
+)
 }
 \arguments{
 \item{FUN}{plot function to be called}

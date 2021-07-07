@@ -4,8 +4,14 @@
 \alias{addGridIfTrue}
 \title{Add a Grid if the First Argument is TRUE}
 \usage{
-addGridIfTrue(plot.grid, xPositions, yPositions = graphics::axTicks(2),
-  col = "grey", lty = 3, ...)
+addGridIfTrue(
+  plot.grid,
+  xPositions,
+  yPositions = graphics::axTicks(2),
+  col = "grey",
+  lty = 3,
+  ...
+)
 }
 \arguments{
 \item{plot.grid}{logical. if TRUE the grid is plotted, else not.}

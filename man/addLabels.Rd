@@ -4,10 +4,20 @@
 \alias{addLabels}
 \title{Add Labels}
 \usage{
-addLabels(x, labels = as.character(x), y0 = 0, bandheight = 0.1,
-  col = "black", group.size = 3, alternating = FALSE,
-  col.line = "black", lty = 1, lty.horiz.line = 0, adj = -0.1,
-  cex = 0.7)
+addLabels(
+  x,
+  labels = as.character(x),
+  y0 = 0,
+  bandheight = 0.1,
+  col = "black",
+  group.size = 3,
+  alternating = FALSE,
+  col.line = "black",
+  lty = 1,
+  lty.horiz.line = 0,
+  adj = -0.1,
+  cex = 0.7
+)
 }
 \arguments{
 \item{x}{x positions of the labels}

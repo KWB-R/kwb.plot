@@ -4,8 +4,7 @@
 \alias{labelPositionY}
 \title{y-positions for labels}
 \usage{
-labelPositionY(n, y0 = 0, bandheight = 0.1, group.size = 3,
-  alternating = TRUE)
+labelPositionY(n, y0 = 0, bandheight = 0.1, group.size = 3, alternating = TRUE)
 }
 \arguments{
 \item{n}{number of y-positions to be generated}
