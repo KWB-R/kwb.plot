@@ -100,7 +100,7 @@ preview_themes <- function(
 
 #' List of available ggplot2-Themes
 #' 
-#' Return a list of predifined themes from the ggplot2-package
+#' Return a list of predefined themes from the ggplot2-package
 #' 
 ggplot_themes <- function()
 {
