@@ -168,56 +168,62 @@ y axis. Use <code><a href='args_yaxis.html'>args_yaxis</a></code> to create such
   bars that have been plotted</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>  <span class='va'>height1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/structure.html'>structure</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span>, names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='st'>"Category"</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span><span class='op'>)</span><span class='op'>)</span>
-  
-  <span class='va'>height2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span>
-    <span class='fl'>1</span><span class='op'>:</span><span class='fl'>12</span>, nrow <span class='op'>=</span> <span class='fl'>3</span>, dimnames <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-      <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"A"</span>, <span class='st'>"B"</span>, <span class='st'>"C"</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='st'>"Long cateogry name"</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>4</span><span class='op'>)</span><span class='op'>)</span>
-  <span class='op'>)</span>
-  
-  <span class='fu'>graphics</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span><span class='op'>(</span>mfrow <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span>
-  
-  <span class='co'># In the simplest form, mybarplot does what barplot does...</span>
-  <span class='va'>x1</span> <span class='op'>&lt;-</span> <span class='fu'>graphics</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/graphics/barplot.html'>barplot</a></span><span class='op'>(</span><span class='va'>height1</span>, main <span class='op'>=</span> <span class='st'>"barplot"</span><span class='op'>)</span>
-  <span class='va'>x2</span> <span class='op'>&lt;-</span> <span class='fu'>mybarplot</span><span class='op'>(</span><span class='va'>height1</span>, main <span class='op'>=</span> <span class='st'>"mybarplot"</span><span class='op'>)</span>
-</div><div class='img'><img src='mybarplot-1.png' alt='' width='700' height='433' /></div><div class='input'>  
-  <span class='co'># ... and gives the same result</span>
-  <span class='fu'><a href='https://rdrr.io/r/base/identical.html'>identical</a></span><span class='op'>(</span><span class='va'>x1</span>, <span class='va'>x2</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>  
-  <span class='co'># We cannot distinguish the labels. With mybarplot we have finer access to the</span>
-  <span class='co'># labels, such as rotation, yposition and adjustment  </span>
-  <span class='fu'>graphics</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span><span class='op'>(</span>mfrow <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>3</span><span class='op'>)</span><span class='op'>)</span>
-  
-  <span class='fu'>graphics</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/graphics/barplot.html'>barplot</a></span><span class='op'>(</span><span class='va'>height1</span>, las <span class='op'>=</span> <span class='fl'>2</span>, main <span class='op'>=</span> <span class='st'>"barplot"</span><span class='op'>)</span>  
-  
-  <span class='fu'>mybarplot</span><span class='op'>(</span><span class='va'>height1</span>, las <span class='op'>=</span> <span class='fl'>2</span>, main <span class='op'>=</span> <span class='st'>"mybarplot"</span>, 
-            args.text <span class='op'>=</span> <span class='fu'><a href='args_text.html'>args_text</a></span><span class='op'>(</span>srt <span class='op'>=</span> <span class='fl'>45</span>, y.abs <span class='op'>=</span> <span class='op'>-</span><span class='fl'>1</span>, col <span class='op'>=</span> <span class='st'>"blue"</span><span class='op'>)</span><span class='op'>)</span>
-  
-  <span class='fu'>mybarplot</span><span class='op'>(</span><span class='va'>height1</span>, las <span class='op'>=</span> <span class='fl'>2</span>, main <span class='op'>=</span> <span class='st'>"mybarplot"</span>, 
-            args.text <span class='op'>=</span> <span class='fu'><a href='args_text.html'>args_text</a></span><span class='op'>(</span>srt <span class='op'>=</span> <span class='fl'>90</span>, y.abs <span class='op'>=</span> <span class='fl'>10</span>, col <span class='op'>=</span> <span class='st'>"red"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='img'><img src='mybarplot-2.png' alt='' width='700' height='433' /></div><div class='input'>  
-  <span class='co'># Concerning the y-axis, you may e.g. give a unit to the values or modify the</span>
-  <span class='co'># positions at which to draw ticks</span>
-  <span class='fu'>graphics</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span><span class='op'>(</span>mfrow <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span>
-  
-  <span class='fu'>mybarplot</span><span class='op'>(</span><span class='va'>height1</span>, las <span class='op'>=</span> <span class='fl'>2</span>, cex.names <span class='op'>=</span> <span class='fl'>0.8</span>,,
-            args.text <span class='op'>=</span> <span class='fu'><a href='args_text.html'>args_text</a></span><span class='op'>(</span>srt <span class='op'>=</span> <span class='fl'>90</span>, y.abs <span class='op'>=</span> <span class='op'>-</span><span class='fl'>0.5</span><span class='op'>)</span>, 
-            args.yaxis <span class='op'>=</span> <span class='fu'><a href='args_yaxis.html'>args_yaxis</a></span><span class='op'>(</span>at <span class='op'>=</span> <span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, unit <span class='op'>=</span> <span class='st'>" %"</span>, col.axis <span class='op'>=</span> <span class='st'>"blue"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='img'><img src='mybarplot-3.png' alt='' width='700' height='433' /></div><div class='input'>  
-  <span class='fu'>graphics</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span><span class='op'>(</span>mfrow <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span>
-  
-  <span class='fu'>graphics</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/graphics/barplot.html'>barplot</a></span><span class='op'>(</span><span class='va'>height2</span>, main <span class='op'>=</span> <span class='st'>"barplot"</span>, cex.names <span class='op'>=</span> <span class='fl'>0.8</span><span class='op'>)</span>
-  
-  <span class='fu'>mybarplot</span><span class='op'>(</span><span class='va'>height2</span>, main <span class='op'>=</span> <span class='st'>"mybarplot"</span>, cex.names <span class='op'>=</span> <span class='fl'>0.8</span>, 
-            args.text <span class='op'>=</span> <span class='fu'><a href='args_text.html'>args_text</a></span><span class='op'>(</span>srt <span class='op'>=</span> <span class='fl'>30</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='img'><img src='mybarplot-4.png' alt='' width='700' height='433' /></div><div class='input'>  
-  <span class='fu'>graphics</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/graphics/barplot.html'>barplot</a></span><span class='op'>(</span><span class='va'>height2</span>, las <span class='op'>=</span> <span class='fl'>1</span>, main <span class='op'>=</span> <span class='st'>"barplot"</span>,   beside <span class='op'>=</span> <span class='cn'>TRUE</span>, 
-                    cex.names <span class='op'>=</span> <span class='fl'>0.8</span><span class='op'>)</span>
-  
-  <span class='fu'>mybarplot</span><span class='op'>(</span><span class='va'>height2</span>, las <span class='op'>=</span> <span class='fl'>1</span>, main <span class='op'>=</span> <span class='st'>"mybarplot"</span>, beside <span class='op'>=</span> <span class='cn'>TRUE</span>, 
-            cex.names <span class='op'>=</span> <span class='fl'>0.8</span>, args.text <span class='op'>=</span> <span class='fu'><a href='args_text.html'>args_text</a></span><span class='op'>(</span>srt <span class='op'>=</span> <span class='fl'>30</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='img'><img src='mybarplot-5.png' alt='' width='700' height='433' /></div><div class='input'>  
-</div></pre>
+    <pre class="examples"><span class='r-in'>  <span class='va'>height1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/structure.html'>structure</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span>, names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='st'>"Category"</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'>  </span>
+<span class='r-in'>  <span class='va'>height2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span></span>
+<span class='r-in'>    <span class='fl'>1</span><span class='op'>:</span><span class='fl'>12</span>, nrow <span class='op'>=</span> <span class='fl'>3</span>, dimnames <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span></span>
+<span class='r-in'>      <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"A"</span>, <span class='st'>"B"</span>, <span class='st'>"C"</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='st'>"Long cateogry name"</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>4</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'>  <span class='op'>)</span></span>
+<span class='r-in'>  </span>
+<span class='r-in'>  <span class='fu'>graphics</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span><span class='op'>(</span>mfrow <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'>  </span>
+<span class='r-in'>  <span class='co'># In the simplest form, mybarplot does what barplot does...</span></span>
+<span class='r-in'>  <span class='va'>x1</span> <span class='op'>&lt;-</span> <span class='fu'>graphics</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/graphics/barplot.html'>barplot</a></span><span class='op'>(</span><span class='va'>height1</span>, main <span class='op'>=</span> <span class='st'>"barplot"</span><span class='op'>)</span></span>
+<span class='r-in'>  <span class='va'>x2</span> <span class='op'>&lt;-</span> <span class='fu'>mybarplot</span><span class='op'>(</span><span class='va'>height1</span>, main <span class='op'>=</span> <span class='st'>"mybarplot"</span><span class='op'>)</span></span>
+<span class='r-plt img'><img src='mybarplot-1.png' alt='' width='700' height='433' /></span>
+<span class='r-in'>  </span>
+<span class='r-in'>  <span class='co'># ... and gives the same result</span></span>
+<span class='r-in'>  <span class='fu'><a href='https://rdrr.io/r/base/identical.html'>identical</a></span><span class='op'>(</span><span class='va'>x1</span>, <span class='va'>x2</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] TRUE</span>
+<span class='r-in'>  </span>
+<span class='r-in'>  <span class='co'># We cannot distinguish the labels. With mybarplot we have finer access to the</span></span>
+<span class='r-in'>  <span class='co'># labels, such as rotation, yposition and adjustment  </span></span>
+<span class='r-in'>  <span class='fu'>graphics</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span><span class='op'>(</span>mfrow <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>3</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'>  </span>
+<span class='r-in'>  <span class='fu'>graphics</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/graphics/barplot.html'>barplot</a></span><span class='op'>(</span><span class='va'>height1</span>, las <span class='op'>=</span> <span class='fl'>2</span>, main <span class='op'>=</span> <span class='st'>"barplot"</span><span class='op'>)</span>  </span>
+<span class='r-in'>  </span>
+<span class='r-in'>  <span class='fu'>mybarplot</span><span class='op'>(</span><span class='va'>height1</span>, las <span class='op'>=</span> <span class='fl'>2</span>, main <span class='op'>=</span> <span class='st'>"mybarplot"</span>, </span>
+<span class='r-in'>            args.text <span class='op'>=</span> <span class='fu'><a href='args_text.html'>args_text</a></span><span class='op'>(</span>srt <span class='op'>=</span> <span class='fl'>45</span>, y.abs <span class='op'>=</span> <span class='op'>-</span><span class='fl'>1</span>, col <span class='op'>=</span> <span class='st'>"blue"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'>  </span>
+<span class='r-in'>  <span class='fu'>mybarplot</span><span class='op'>(</span><span class='va'>height1</span>, las <span class='op'>=</span> <span class='fl'>2</span>, main <span class='op'>=</span> <span class='st'>"mybarplot"</span>, </span>
+<span class='r-in'>            args.text <span class='op'>=</span> <span class='fu'><a href='args_text.html'>args_text</a></span><span class='op'>(</span>srt <span class='op'>=</span> <span class='fl'>90</span>, y.abs <span class='op'>=</span> <span class='fl'>10</span>, col <span class='op'>=</span> <span class='st'>"red"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-plt img'><img src='mybarplot-2.png' alt='' width='700' height='433' /></span>
+<span class='r-in'>  </span>
+<span class='r-in'>  <span class='co'># Concerning the y-axis, you may e.g. give a unit to the values or modify the</span></span>
+<span class='r-in'>  <span class='co'># positions at which to draw ticks</span></span>
+<span class='r-in'>  <span class='fu'>graphics</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span><span class='op'>(</span>mfrow <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'>  </span>
+<span class='r-in'>  <span class='fu'>mybarplot</span><span class='op'>(</span><span class='va'>height1</span>, las <span class='op'>=</span> <span class='fl'>2</span>, cex.names <span class='op'>=</span> <span class='fl'>0.8</span>,,</span>
+<span class='r-in'>            args.text <span class='op'>=</span> <span class='fu'><a href='args_text.html'>args_text</a></span><span class='op'>(</span>srt <span class='op'>=</span> <span class='fl'>90</span>, y.abs <span class='op'>=</span> <span class='op'>-</span><span class='fl'>0.5</span><span class='op'>)</span>, </span>
+<span class='r-in'>            args.yaxis <span class='op'>=</span> <span class='fu'><a href='args_yaxis.html'>args_yaxis</a></span><span class='op'>(</span>at <span class='op'>=</span> <span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, unit <span class='op'>=</span> <span class='st'>" %"</span>, col.axis <span class='op'>=</span> <span class='st'>"blue"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-plt img'><img src='mybarplot-3.png' alt='' width='700' height='433' /></span>
+<span class='r-in'>  </span>
+<span class='r-in'>  <span class='fu'>graphics</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span><span class='op'>(</span>mfrow <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'>  </span>
+<span class='r-in'>  <span class='fu'>graphics</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/graphics/barplot.html'>barplot</a></span><span class='op'>(</span><span class='va'>height2</span>, main <span class='op'>=</span> <span class='st'>"barplot"</span>, cex.names <span class='op'>=</span> <span class='fl'>0.8</span><span class='op'>)</span></span>
+<span class='r-in'>  </span>
+<span class='r-in'>  <span class='fu'>mybarplot</span><span class='op'>(</span><span class='va'>height2</span>, main <span class='op'>=</span> <span class='st'>"mybarplot"</span>, cex.names <span class='op'>=</span> <span class='fl'>0.8</span>, </span>
+<span class='r-in'>            args.text <span class='op'>=</span> <span class='fu'><a href='args_text.html'>args_text</a></span><span class='op'>(</span>srt <span class='op'>=</span> <span class='fl'>30</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-plt img'><img src='mybarplot-4.png' alt='' width='700' height='433' /></span>
+<span class='r-in'>  </span>
+<span class='r-in'>  <span class='fu'>graphics</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/graphics/barplot.html'>barplot</a></span><span class='op'>(</span><span class='va'>height2</span>, las <span class='op'>=</span> <span class='fl'>1</span>, main <span class='op'>=</span> <span class='st'>"barplot"</span>,   beside <span class='op'>=</span> <span class='cn'>TRUE</span>, </span>
+<span class='r-in'>                    cex.names <span class='op'>=</span> <span class='fl'>0.8</span><span class='op'>)</span></span>
+<span class='r-in'>  </span>
+<span class='r-in'>  <span class='fu'>mybarplot</span><span class='op'>(</span><span class='va'>height2</span>, las <span class='op'>=</span> <span class='fl'>1</span>, main <span class='op'>=</span> <span class='st'>"mybarplot"</span>, beside <span class='op'>=</span> <span class='cn'>TRUE</span>, </span>
+<span class='r-in'>            cex.names <span class='op'>=</span> <span class='fl'>0.8</span>, args.text <span class='op'>=</span> <span class='fu'><a href='args_text.html'>args_text</a></span><span class='op'>(</span>srt <span class='op'>=</span> <span class='fl'>30</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-plt img'><img src='mybarplot-5.png' alt='' width='700' height='433' /></span>
+<span class='r-in'>  </span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
