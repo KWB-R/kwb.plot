@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://kwb-r.github.io/kwb.plot/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>https://kwb-r.github.io/kwb.plot/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://kwb-r.github.io/kwb.plot/authors.html</loc>
+  </url>
+  <url>
     <loc>https://kwb-r.github.io/kwb.plot/index.html</loc>
+  </url>
+  <url>
+    <loc>https://kwb-r.github.io/kwb.plot/news/index.html</loc>
   </url>
   <url>
     <loc>https://kwb-r.github.io/kwb.plot/reference/addGridIfTrue.html</loc>
@@ -104,6 +116,9 @@
   </url>
   <url>
     <loc>https://kwb-r.github.io/kwb.plot/reference/inchesToUserWidthAndHeight.html</loc>
+  </url>
+  <url>
+    <loc>https://kwb-r.github.io/kwb.plot/reference/index.html</loc>
   </url>
   <url>
     <loc>https://kwb-r.github.io/kwb.plot/reference/labelPositionY.html</loc>
