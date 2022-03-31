@@ -368,7 +368,8 @@ addTimeAxis <- function(
 #' 
 #' @param n number of plots to be placed in a matrix of equally sized plot cells
 #' @param target.ratio desired height/width ratio within each plot (ignoring margins). Default: 1
-#' 
+#' @param device.ratio desired height/width ratio in the output device. Default:
+#'   \code{kwb.plot:::getPlotRegionRatio()}
 #' @return named vector of two elements with the first element (\code{nrow})
 #'   representing the number of rows and the second element (\code{ncol})
 #'   representing the number of columns for an optimal plot grid to be used for
@@ -392,19 +393,19 @@ addTimeAxis <- function(
 #'   # restore graphical parameter setting
 #'   graphics::par(old.par)  
 #' 
-bestRowColumnSetting <- function(n, target.ratio = 1)
+bestRowColumnSetting <- function(n, target.ratio = 1, device.ratio = NULL)
 {
   rowsColumns <- lapply(seq_len(n), function(n.rows) {
     n.cols = ceiling(n / n.rows)
     c(n.rows, n.cols)
   })  
   
-  ratio <- getPlotRegionRatio()
+  device.ratio <- kwb.utils::defaultIfNULL(device.ratio, getPlotRegionRatio())
   
   ratios <- sapply(rowsColumns, function(rowColumn) {
     n.rows <- rowColumn[1]
     n.cols <- rowColumn[2]  
-    ratio * n.cols/n.rows
+    device.ratio * n.cols/n.rows
   })
   
   structure(
