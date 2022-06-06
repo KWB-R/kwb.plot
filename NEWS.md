@@ -1,5 +1,7 @@
 # kwb.plot (development version)
 
+* add argument "device.ratio" to bestRowColumnSetting()
+
 # kwb.plot 0.3.0
 
 * Add a `NEWS.md` file to track changes to the package.

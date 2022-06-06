@@ -33,7 +33,7 @@ stackplot <- function(
   
   stackplotLayout(heights.cm, margins.top.cm, margins.bottom.cm)
   
-  for (i in 1:n) {
+  for (i in seq_len(n)) {
 
     cat(sprintf("\n*** Plotting plot %d/%d: %s... ", 
                 i, n, as.character(functionCalls[[i]])))
@@ -70,11 +70,11 @@ stackplotLayout <- function(
   
   n <- length(heights.cm)
   
-  rowheights.cm <- sapply(1:n, function(i) {
+  rowheights.cm <- sapply(seq_len(n), function(i) {
     heights.cm[i] + margins.top.cm[i] + margins.bottom.cm[i]
   })
   
-  graphics::layout(matrix(1:n), heights = graphics::lcm(rowheights.cm))
+  graphics::layout(matrix(seq_len(n)), heights = graphics::lcm(rowheights.cm))
   
   if (show) {
     
