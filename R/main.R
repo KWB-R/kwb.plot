@@ -288,7 +288,7 @@ labelPositionY <- function(
 #' 
 alternatingPositions <- function(n = 10, group.size = 3, alternating = TRUE)
 {
-  x <- 1:n
+  x <- seq_len(n)
   
   x <- if (alternating) {
     as.integer((x - 1) / 2) %% group.size + 1
@@ -299,7 +299,7 @@ alternatingPositions <- function(n = 10, group.size = 3, alternating = TRUE)
   x <- (group.size + 1) - x
   
   if (alternating) {
-    x <- (-1)^(1:n) * x
+    x <- (-1)^(seq_len(n)) * x
   }
   
   x
