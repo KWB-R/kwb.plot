@@ -4,8 +4,13 @@
 \alias{ggplot_text_lines}
 \title{Plot Text Only}
 \usage{
-ggplot_text_lines(x, max_rows = max(10, length(x)), size = 3,
-  max_chars = 170, margins_cm = c(0, 0, 0, 0))
+ggplot_text_lines(
+  x,
+  max_rows = max(10, length(x)),
+  size = 3,
+  max_chars = 170,
+  margins_cm = c(0, 0, 0, 0)
+)
 }
 \arguments{
 \item{x}{vector of character representing the rows of text to be plotted from

@@ -4,8 +4,7 @@
 \alias{args_text}
 \title{Create argument list for text}
 \usage{
-args_text(y.abs = NULL, y.rel = -0.01, srt = 90, adj = c(1, 0.5),
-  ...)
+args_text(y.abs = NULL, y.rel = -0.01, srt = 90, adj = c(1, 0.5), ...)
 }
 \arguments{
 \item{y.abs}{absolute y positions}

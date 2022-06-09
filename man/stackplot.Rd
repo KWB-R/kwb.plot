@@ -4,9 +4,15 @@
 \alias{stackplot}
 \title{Plots on Top of Each Other}
 \usage{
-stackplot(functionCalls, heights.cm = 5, margins.top.cm = 0,
-  margins.bottom.cm = 0, margins.left.cm = 3, margins.right.cm = 1,
-  envir = parent.frame())
+stackplot(
+  functionCalls,
+  heights.cm = 5,
+  margins.top.cm = 0,
+  margins.bottom.cm = 0,
+  margins.left.cm = 3,
+  margins.right.cm = 1,
+  envir = parent.frame()
+)
 }
 \arguments{
 \item{functionCalls}{list of expressions each of which is expected to create a plot when

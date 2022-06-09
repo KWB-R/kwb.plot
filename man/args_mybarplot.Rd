@@ -4,9 +4,13 @@
 \alias{args_mybarplot}
 \title{Create argument list for mybarplot}
 \usage{
-args_mybarplot(cex.axis = graphics::par("cex.axis"),
-  cex.names = graphics::par("cex.axis"), ..., args.text = NULL,
-  args.yaxis = NULL)
+args_mybarplot(
+  cex.axis = graphics::par("cex.axis"),
+  cex.names = graphics::par("cex.axis"),
+  ...,
+  args.text = NULL,
+  args.yaxis = NULL
+)
 }
 \arguments{
 \item{cex.axis}{character expansion factor of axis labels}

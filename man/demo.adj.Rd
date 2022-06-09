@@ -4,8 +4,7 @@
 \alias{demo.adj}
 \title{Demo of Graphical Parameter "adj"}
 \usage{
-demo.adj(text = "Text", srt = c(0, 90), cex = 1, ...,
-  to.pdf = FALSE)
+demo.adj(text = "Text", srt = c(0, 90), cex = 1, ..., to.pdf = FALSE)
 }
 \arguments{
 \item{text}{text to be plotted}
