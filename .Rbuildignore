@@ -10,3 +10,6 @@ _pkgdown.yaml
 ^\.gitlab-ci\.yml$
 ^LICENSE\.md$
 ^\.github$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
