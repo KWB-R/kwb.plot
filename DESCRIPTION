@@ -34,4 +34,4 @@ Remotes:
     github::kwb-r/kwb.utils,
     github::kwb-r/kwb.datetime
 Encoding: UTF-8
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.2

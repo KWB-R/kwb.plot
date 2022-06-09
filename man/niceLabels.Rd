@@ -4,8 +4,7 @@
 \alias{niceLabels}
 \title{Nice Labels}
 \usage{
-niceLabels(label, labelstep = NULL, labelpos = NULL, mindist = 1,
-  offset = 0)
+niceLabels(label, labelstep = NULL, labelpos = NULL, mindist = 1, offset = 0)
 }
 \arguments{
 \item{label}{vector of labels}
