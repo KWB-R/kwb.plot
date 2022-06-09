@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://kwb-r.github.io/kwb.plot/404.html</loc>
+  </url>
+  <url>
+    <loc>https://kwb-r.github.io/kwb.plot/authors.html</loc>
+  </url>
+  <url>
     <loc>https://kwb-r.github.io/kwb.plot/index.html</loc>
+  </url>
+  <url>
+    <loc>https://kwb-r.github.io/kwb.plot/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>https://kwb-r.github.io/kwb.plot/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://kwb-r.github.io/kwb.plot/news/index.html</loc>
   </url>
   <url>
     <loc>https://kwb-r.github.io/kwb.plot/reference/addGridIfTrue.html</loc>
@@ -46,9 +61,6 @@
     <loc>https://kwb-r.github.io/kwb.plot/reference/demo.adj.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.plot/reference/demo_theme_properties.html</loc>
-  </url>
-  <url>
     <loc>https://kwb-r.github.io/kwb.plot/reference/demo_themes_line.html</loc>
   </url>
   <url>
@@ -56,6 +68,9 @@
   </url>
   <url>
     <loc>https://kwb-r.github.io/kwb.plot/reference/demo_themes_text.html</loc>
+  </url>
+  <url>
+    <loc>https://kwb-r.github.io/kwb.plot/reference/demo_theme_properties.html</loc>
   </url>
   <url>
     <loc>https://kwb-r.github.io/kwb.plot/reference/dot-defaultPlotParameter.html</loc>
@@ -100,10 +115,13 @@
     <loc>https://kwb-r.github.io/kwb.plot/reference/ggplot_themes.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.plot/reference/inLimits.html</loc>
+    <loc>https://kwb-r.github.io/kwb.plot/reference/inchesToUserWidthAndHeight.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.plot/reference/inchesToUserWidthAndHeight.html</loc>
+    <loc>https://kwb-r.github.io/kwb.plot/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://kwb-r.github.io/kwb.plot/reference/inLimits.html</loc>
   </url>
   <url>
     <loc>https://kwb-r.github.io/kwb.plot/reference/labelPositionY.html</loc>
