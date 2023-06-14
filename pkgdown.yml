@@ -1,8 +1,8 @@
-pandoc: 2.7.3
-pkgdown: 2.0.3
+pandoc: 2.19.2
+pkgdown: 2.0.7
 pkgdown_sha: ~
 articles: {}
-last_built: 2022-06-09T18:40Z
+last_built: 2023-06-14T05:36Z
 urls:
   reference: https://kwb-r.github.io/kwb.plot/reference
   article: https://kwb-r.github.io/kwb.plot/articles
