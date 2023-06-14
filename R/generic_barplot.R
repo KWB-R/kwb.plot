@@ -32,7 +32,7 @@
 #'   default value is `FALSE`.
 #' @return A barplot visualising the data using ggplot.
 #' @importFrom ggplot2 aes geom_bar ggplot
-# @importFrom rlang .data
+#' @importFrom rlang .data
 #' @export
 #' @examples
 #' # Basic usage
@@ -83,14 +83,14 @@ generic_barplot <- function(
   
   # Prepare aesthetics to be given to ggplot()
   plot_mapping <- if (is.null(values_in)) {
-    ggplot2::aes(x = {{ group_by }})
+    ggplot2::aes(x = .data[[group_by]])
   } else {
-    ggplot2::aes(x = {{ group_by }}, y = {{ values_in }})
+    ggplot2::aes(x = .data[[group_by]], y = .data[[values_in]])
   }
   
   # Prepare aesthetics to be given to geom_bar()
   fill_mapping <- if (!is.null(fill_by)) {
-    ggplot2::aes(fill = {{ fill_by }})
+    ggplot2::aes(fill = .data[[fill_by]])
   }
   
   ggplot2::ggplot(data, mapping = plot_mapping) + 

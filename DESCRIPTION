@@ -17,7 +17,8 @@ BugReports: https://github.com/kwb-r/kwb.plot/issues
 Imports: 
     ggplot2,
     gridExtra,
-    kwb.utils
+    kwb.utils,
+    rlang
 Suggests:
     devtools,
     knitr,
