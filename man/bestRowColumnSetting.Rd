@@ -4,12 +4,15 @@
 \alias{bestRowColumnSetting}
 \title{best nrow/ncol setting for n plots}
 \usage{
-bestRowColumnSetting(n, target.ratio = 1)
+bestRowColumnSetting(n, target.ratio = 1, device.ratio = NULL)
 }
 \arguments{
 \item{n}{number of plots to be placed in a matrix of equally sized plot cells}
 
 \item{target.ratio}{desired height/width ratio within each plot (ignoring margins). Default: 1}
+
+\item{device.ratio}{desired height/width ratio in the output device. Default:
+\code{kwb.plot:::getPlotRegionRatio()}}
 }
 \value{
 named vector of two elements with the first element (\code{nrow})
