@@ -65,7 +65,8 @@ based on counts or specific values.</p>
 <span>  <span class="va">group_by</span>,</span>
 <span>  values_in <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  fill_by <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  percentaged <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>  percentaged <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -76,35 +77,40 @@ based on counts or specific values.</p>
 
 
 <dt>group_by</dt>
-<dd><p>The name of the column in `data` that contains the group 
-labels. Each unique value in this column corresponds to a distinct group, 
-and a bar will be generated for each group. The column must be of type 
+<dd><p>The name of the column in <code>data</code> that contains the group
+labels. Each unique value in this column corresponds to a distinct group,
+and a bar will be generated for each group. The column must be of type
 character or factor.</p></dd>
 
 
 <dt>values_in</dt>
-<dd><p>(Optional) The name of the column in `data` that contains
-the values used to calculate the bar heights. If not provided, the bar
-heights will be calculated based on the counts, i.e., the number of rows in
-`data` that belong to each group as defined by the values in column
-`group_by`.</p></dd>
+<dd><p>(Optional) The name of the column in <code>data</code> that
+contains the values used to calculate the bar heights. If not provided, the
+bar heights will be calculated based on the counts, i.e., the number of
+rows in <code>data</code> that belong to each group as defined by the values in
+column <code>group_by</code>.</p></dd>
 
 
 <dt>fill_by</dt>
-<dd><p>(Optional) The name of the column in `data` that defines
+<dd><p>(Optional) The name of the column in <code>data</code> that defines
 sub-groups. Each sub-group will be represented by a different fill colour,
 and the bars will consist of stacked, filled rectangles. This parameter is
 useful when visualising sub-groups within each group.</p></dd>
 
 
 <dt>percentaged</dt>
-<dd><p>If set to `TRUE`, all bars will be stretched to extend to
-the full height of the plot. This option is only applicable when `fill_by`
-is specified where each bar is represented by a stack of rectangles each of
-which is filled in a different colour. The heights of the rectangles will
-then reflect the proportions of each sub-group (count or sum of
-corresponding rows or values in the `values_in` column) within a group. The
-default value is `FALSE`.</p></dd>
+<dd><p>If set to <code>TRUE</code>, all bars will be stretched to
+extend to the full height of the plot. This option is only applicable when
+<code>fill_by</code> is specified where each bar is represented by a stack of
+rectangles each of which is filled in a different colour. The heights of
+the rectangles will then reflect the proportions of each sub-group (count
+or sum of corresponding rows or values in the <code>values_in</code> column)
+within a group. The default value is <code>FALSE</code>.</p></dd>
+
+
+<dt>...</dt>
+<dd><p>further arguments passed to <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_bar</a></code>, 
+such as <code>width</code> (bar width), <code>fill</code> (fill colour).</p></dd>
 
 </dl></div>
     <div class="section level2">
