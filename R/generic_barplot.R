@@ -64,7 +64,8 @@ generic_barplot <- function(
     group_by, 
     values_in = NULL, 
     fill_by = NULL,
-    percentaged = FALSE
+    percentaged = FALSE,
+    ...
 )
 {
   columns <- names(data)
