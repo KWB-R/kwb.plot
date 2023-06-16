@@ -10,7 +10,7 @@ generic_barplot(
   values_in = NULL,
   fill_by = NULL,
   percentaged = FALSE,
-  ...
+  args_geom_bar = list()
 )
 }
 \arguments{
@@ -40,8 +40,9 @@ the rectangles will then reflect the proportions of each sub-group (count
 or sum of corresponding rows or values in the \code{values_in} column)
 within a group. The default value is \code{FALSE}.}
 
-\item{\dots}{further arguments passed to \code{\link[ggplot2]{geom_bar}}, 
-such as \code{width} (bar width), \code{fill} (fill colour).}
+\item{args_geom_bar}{(Optional) List of arguments that are to be passed to
+\code{\link[ggplot2]{geom_bar}}, such as \code{width} (bar width),
+\code{fill} (fill colour).}
 }
 \value{
 A barplot visualising the data using ggplot.
@@ -78,4 +79,12 @@ generic_barplot(
   fill_by = "subgroup", 
   percentaged = TRUE
 )
+
+# Pass arguments to geom_bar()
+generic_barplot(
+  data = my_data,
+  group_by = "group",
+  args_geom_bar = list(fill = "red", width = 0.5)
+)
+
 }

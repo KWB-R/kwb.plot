@@ -30,8 +30,9 @@
 #'   the rectangles will then reflect the proportions of each sub-group (count
 #'   or sum of corresponding rows or values in the \code{values_in} column)
 #'   within a group. The default value is \code{FALSE}.
-#' @param \dots further arguments passed to \code{\link[ggplot2]{geom_bar}}, 
-#'   such as \code{width} (bar width), \code{fill} (fill colour).
+#' @param args_geom_bar (Optional) List of arguments that are to be passed to
+#'   \code{\link[ggplot2]{geom_bar}}, such as \code{width} (bar width),
+#'   \code{fill} (fill colour).
 #' @return A barplot visualising the data using ggplot.
 #' @importFrom ggplot2 aes geom_bar ggplot
 #' @importFrom rlang .data
@@ -59,13 +60,21 @@
 #'   fill_by = "subgroup", 
 #'   percentaged = TRUE
 #' )
+#' 
+#' # Pass arguments to geom_bar()
+#' generic_barplot(
+#'   data = my_data,
+#'   group_by = "group",
+#'   args_geom_bar = list(fill = "red", width = 0.5)
+#' )
+#' 
 generic_barplot <- function(
     data, 
     group_by, 
     values_in = NULL, 
     fill_by = NULL,
     percentaged = FALSE,
-    ...
+    args_geom_bar = list()
 )
 {
   columns <- names(data)
@@ -83,6 +92,8 @@ generic_barplot <- function(
     stopifnot(values_in %in% columns)
     stopifnot(is.numeric(data[[values_in]]))
   }
+
+  stopifnot(is.list(args_geom_bar))
   
   # Prepare aesthetics to be given to ggplot()
   plot_mapping <- if (is.null(values_in)) {
@@ -97,10 +108,27 @@ generic_barplot <- function(
   }
   
   ggplot2::ggplot(data, mapping = plot_mapping) + 
-    ggplot2::geom_bar(
-      mapping = fill_mapping,
-      stat = ifelse(is.null(values_in), "count", "identity"),
-      position = ifelse(percentaged, "fill", "stack"),
-      ...
+    do.call(
+      what = ggplot2::geom_bar, 
+      args = c(
+        list(
+          mapping = fill_mapping,
+          stat = ifelse(is.null(values_in), "count", "identity"),
+          position = ifelse(percentaged, "fill", "stack")
+        ), 
+        args_geom_bar
+      )
     )
 }
+
+my_data <- data.frame(
+ group = c("A", "A", "A", "B", "B", "C", "C"),
+ value = c(10, 15, 3, 8, 12, 5, 20),
+ subgroup = c("X", "Y", "X", "X", "Y", "X", "Y")
+)
+
+generic_barplot(
+  data = my_data,
+  group_by = "group",
+  args_geom_bar = list(fill = "red", width = 0.5)
+)
