@@ -30,6 +30,8 @@
 #'   the rectangles will then reflect the proportions of each sub-group (count
 #'   or sum of corresponding rows or values in the \code{values_in} column)
 #'   within a group. The default value is \code{FALSE}.
+#' @param reverse Whether or not to reverse the stack order, passed to 
+#'   \code{\link[ggplot2]{position_fill}}. The default is \code{FALSE}.
 #' @param args_geom_bar (Optional) List of arguments that are to be passed to
 #'   \code{\link[ggplot2]{geom_bar}}, such as \code{width} (bar width),
 #'   \code{fill} (fill colour).
@@ -74,6 +76,7 @@ generic_barplot <- function(
     values_in = NULL, 
     fill_by = NULL,
     percentaged = FALSE,
+    reverse = FALSE,
     args_geom_bar = list()
 )
 {
@@ -114,7 +117,11 @@ generic_barplot <- function(
         list(
           mapping = fill_mapping,
           stat = ifelse(is.null(values_in), "count", "identity"),
-          position = ifelse(percentaged, "fill", "stack")
+          position = if (percentaged) {
+            ggplot2::position_fill(reverse = reverse) # "fill"
+          } else {
+            ggplot2::position_stack(reverse = reverse) #"stack"
+          }
         ), 
         args_geom_bar
       )
