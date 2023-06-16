@@ -66,6 +66,7 @@ based on counts or specific values.</p>
 <span>  values_in <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  fill_by <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  percentaged <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  reverse <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  args_geom_bar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -106,6 +107,11 @@ rectangles each of which is filled in a different colour. The heights of
 the rectangles will then reflect the proportions of each sub-group (count
 or sum of corresponding rows or values in the <code>values_in</code> column)
 within a group. The default value is <code>FALSE</code>.</p></dd>
+
+
+<dt>reverse</dt>
+<dd><p>Whether or not to reverse the stack order, passed to 
+<code><a href="https://ggplot2.tidyverse.org/reference/position_stack.html" class="external-link">position_fill</a></code>. The default is <code>FALSE</code>.</p></dd>
 
 
 <dt>args_geom_bar</dt>
