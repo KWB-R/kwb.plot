@@ -1,3 +1,7 @@
+# [kwb.plot 0.5.0](https://github.com/KWB-R/kwb.plot/releases/tag/v0.5.0)<small>2023-06-21</small>
+
+* to be described
+
 # [kwb.plot 0.4.0](https://github.com/KWB-R/kwb.plot/releases/tag/v0.4.0)<small>2022-06-10</small>
 
 * Harmonised with R package [kwb.pkgbuild](https://kwb-r.github.io/kwb.pkgbuild)
